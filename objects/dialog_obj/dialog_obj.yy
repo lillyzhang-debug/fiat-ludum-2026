@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"player_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"dialog_obj",
+  "eventList":[],
   "managed":true,
-  "name":"player_obj",
+  "name":"dialog_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"player stuff",
-    "path":"folders/player stuff.yy",
+    "name":"gui",
+    "path":"folders/gui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"player_spr_2",
-    "path":"sprites/player_spr_2/player_spr_2.yy",
+    "name":"dialogbox_spr",
+    "path":"sprites/dialogbox_spr/dialogbox_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

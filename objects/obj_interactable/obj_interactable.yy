@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"player_obj",
+  "%Name":"obj_interactable",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"player_obj",
+  "name":"obj_interactable",
   "overriddenProperties":[],
   "parent":{
-    "name":"player stuff",
-    "path":"folders/player stuff.yy",
+    "name":"interactables",
+    "path":"folders/interactables.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"player_spr_2",
-    "path":"sprites/player_spr_2/player_spr_2.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
