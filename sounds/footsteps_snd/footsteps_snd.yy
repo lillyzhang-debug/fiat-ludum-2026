@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"footsteps_snd",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":6.545465,
+  "exportDir":"",
+  "name":"footsteps_snd",
+  "parent":{
+    "name":"soundsfx",
+    "path":"folders/soundsfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"footsteps_snd.wav",
+  "volume":1.0,
+}

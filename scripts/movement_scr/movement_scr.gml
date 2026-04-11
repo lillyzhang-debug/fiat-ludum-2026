@@ -1,23 +1,34 @@
 function movement_scr(_speed) {
+	var y_spd = 0;
+	var x_spd = 0;
 	    // Y-Axis 
 	if (keyboard_check(ord("W")) && place_meeting(x, y - _speed, spaceship_obj)) {
-	    y -= _speed; // Up is minus
+	    y_spd -= _speed; // Up is minus
 		direction = 90;
 	}
 	else if (keyboard_check(ord("S")) && place_meeting(x, y + _speed, spaceship_obj)) {
-	    y += _speed; // Down is plus
+	    y_spd += _speed; // Down is plus
 		direction = 270;
 	}
 
 	// X-Axis 
 	else if (keyboard_check(ord("A")) && place_meeting(x  - _speed, y, spaceship_obj)) {
-	    x -= _speed; // Left is minus
+	    x_spd -= _speed; // Left is minus
 		direction = 180;
 	}
 	else if (keyboard_check(ord("D")) && place_meeting(x + _speed, y, spaceship_obj)) {
-	    x += _speed; // Right is plus
+	    x_spd += _speed; // Right is plus
 		direction = 0;
 	}
+	
+	if (x_spd != 0 || y_spd != 0) {
+		collision_tilemap = layer_tilemap_get_id("collision_map");
+		move_and_collide(x_spd, y_spd, collision_tilemap);
+		return true;
+	}
+	
+	// not moving
+	return false;
 }
 
 function movement_animation(moving) {

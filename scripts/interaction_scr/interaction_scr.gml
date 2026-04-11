@@ -49,24 +49,28 @@ function interaction_scr(){
 				line_index = 1;
 			}
 		
+			// check for invalid indicies
 			if (line_index >= array_length(dialog_array)) {
 	            line_index = 0; 
 	        }
 		
 			var current_line = dialog_array[line_index];
-		
-			var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 			
-			// sort item into plain flavor text or an option
-			if(is_string(current_line)) {
-				dialogcontroller.full_line = current_line;
-				dialogcontroller.options = [];
-				dialogcontroller.option_actions = [];
-			} 
-			if(is_struct(current_line)) {
-				dialogcontroller.full_line = current_line.text
-				dialogcontroller.options = current_line.options;
-				dialogcontroller.option_actions = current_line.actions;
+			// if theres already a dialog box open, don't open another
+			if(!instance_exists(dialogcontroller_obj)) {
+				var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+			
+				// sort item into plain flavor text or an option
+				if(is_string(current_line)) {
+					dialogcontroller.full_line = current_line;
+					dialogcontroller.options = [];
+					dialogcontroller.option_actions = [];
+				} 
+				if(is_struct(current_line)) {
+					dialogcontroller.full_line = current_line.text
+					dialogcontroller.options = current_line.options;
+					dialogcontroller.option_actions = current_line.actions;
+				}
 			}
 		}
 	}

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"fl26",
-    "path":"fl26.yyp",
+    "name":"backgrounds",
+    "path":"folders/backgrounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

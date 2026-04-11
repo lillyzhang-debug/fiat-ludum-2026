@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"spaceship_obj",
-  "eventList":[],
+  "%Name":"tutorialmanager_obj",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"spaceship_obj",
+  "name":"tutorialmanager_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"backgrounds",
-    "path":"folders/backgrounds.yy",
+    "name":"managers",
+    "path":"folders/managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,9 +31,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Untitled_Artwork",
-    "path":"sprites/Untitled_Artwork/Untitled_Artwork.yy",
+    "name":"wabbit_spr",
+    "path":"sprites/wabbit_spr/wabbit_spr.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

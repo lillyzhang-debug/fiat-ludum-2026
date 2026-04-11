@@ -48,7 +48,12 @@ global.item_dialog = {
 						actions: [
 									function() {								
 										// fade the screen to black and decrement the timer by 15
+										// if there are not 15 seconds left, set the remaining time to 3
+										if(global.looptime_remaining > 15){
 											global.looptime_remaining -= 15;
+										} else {
+											global.looptime_remaining = 3;
+										}
 										
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
 										// read out dialog line after we fade
@@ -60,6 +65,7 @@ global.item_dialog = {
 										}
 
 									},
+									
 									function() { // indicate you leave
 										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 										dialogcontroller.full_line = "Time better used doing something else.";

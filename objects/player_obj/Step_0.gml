@@ -1,13 +1,15 @@
 // call movement script
 if(!instance_exists(dialogcontroller_obj)){
-	movement_scr(player_spd);
+	player_moving = movement_scr(player_spd);
 	
-	if(xprevious != x || yprevious != y) {
-		player_moving = true;
+	if(player_moving) {
+		if (!audio_is_playing(footstep_loop)){
+			footstep_loop = audio_play_sound(footsteps_snd, 1, true);
+		}
 	} else {
-		player_moving = false;
+		audio_stop_sound(footstep_loop);
 	}
-	
+			
 	movement_animation(player_moving);
 } else {
 	sprite_index = player_spr;
