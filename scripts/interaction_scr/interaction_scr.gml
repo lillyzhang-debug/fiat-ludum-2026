@@ -39,7 +39,12 @@ function interaction_scr(){
 			// how these are set
 			if(target_id == "console2" && global.looptime_remaining > 50) {
 				coordfound = true;
+				if (global.curr_gamestate == 1) {
+					global.curr_gamestate++;
+					//maybe have dialogue abt like ...where do i put these .... something to direct the player
+				}
 				line_index = 1; //
+				
 			} else if (target_id == "console3" && passfound) {
 				line_index = 1;
 			}
