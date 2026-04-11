@@ -33,7 +33,7 @@ if(char_index < string_length(full_line)) {
         }
 		
 		if(keyboard_check_pressed(vk_enter)) {
-			var chosen_action = actions[current_selection];
+			var chosen_action = option_actions[current_selection];
 			chosen_action();
 			instance_destroy();
 		}

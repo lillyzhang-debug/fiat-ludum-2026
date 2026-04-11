@@ -46,17 +46,25 @@ global.item_dialog = {
 						text: "The vent cover is loose. Should you try to get the cover off?",
 						options: ["Try to take the cover off", "Leave"],
 						actions: [
-									function() {//play animation for x amount of time
-										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-										dialogcontroller.full_line = "You struggle with the lid for several moments, but the cover remains firmly on the vent.";
-										dialogcontroller.options = [];
-										dialogcontroller.option_action = [];
+									function() {								
+										// fade the screen to black and decrement the timer by 15
+											global.looptime_remaining -= 15;
+										
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+											dialogcontroller.full_line = "You struggle with the lid for several moments, but the cover remains firmly on the vent.";
+											dialogcontroller.options = [];
+											dialogcontroller.option_actions = [];
+										}
+
 									},
 									function() { // indicate you leave
 										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 										dialogcontroller.full_line = "Time better used doing something else.";
 										dialogcontroller.options = [];
-										dialogcontroller.option_action = [];
+										dialogcontroller.option_actions = [];
 									}
 										
 								]

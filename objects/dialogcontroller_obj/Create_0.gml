@@ -7,4 +7,4 @@ text_speed = 0.5;
 //---option variables---
 options = [];
 current_selection = 0;
-option_action = [];
+option_actions = [];

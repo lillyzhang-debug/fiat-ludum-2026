@@ -33,6 +33,7 @@
     {"id":{"name":"bed_obj","path":"objects/bed_obj/bed_obj.yy",},},
     {"id":{"name":"console2_obj","path":"objects/console2_obj/console2_obj.yy",},},
     {"id":{"name":"dialogcontroller_obj","path":"objects/dialogcontroller_obj/dialogcontroller_obj.yy",},},
+    {"id":{"name":"fadetoblack_obj","path":"objects/fadetoblack_obj/fadetoblack_obj.yy",},},
     {"id":{"name":"gamemanager_obj","path":"objects/gamemanager_obj/gamemanager_obj.yy",},},
     {"id":{"name":"interactable_obj","path":"objects/interactable_obj/interactable_obj.yy",},},
     {"id":{"name":"player_obj","path":"objects/player_obj/player_obj.yy",},},

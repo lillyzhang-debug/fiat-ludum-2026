@@ -61,12 +61,12 @@ function interaction_scr(){
 			if(is_string(current_line)) {
 				dialogcontroller.full_line = current_line;
 				dialogcontroller.options = [];
-				dialogcontroller.option_action = [];
+				dialogcontroller.option_actions = [];
 			} 
 			if(is_struct(current_line)) {
 				dialogcontroller.full_line = current_line.text
 				dialogcontroller.options = current_line.options;
-				dialogcontroller.option_action = current_line.actions;
+				dialogcontroller.option_actions = current_line.actions;
 			}
 		}
 	}
