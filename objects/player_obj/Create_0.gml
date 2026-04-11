@@ -1,7 +1,9 @@
-coordfound = false;
+coordfound = true;
 
-passfound = false;
+passfound = true;
 
-routed = false;
+routed = true;
 
 player_spd = 1;
+
+player_moving = false;

@@ -29,8 +29,27 @@ function gamestatus_scr(){
 }
 
 // run in player
-function checkWinCond(cond1, cond2, cond3){
+function check_win_cond(cond1, cond2, cond3){
 	if (cond1 && cond2 && cond3) {
 		global.gamewon = true;
 	}
+}
+
+function game_win_or_lose(){
+	if(global.gamewon == true) {
+		win();
+		// play win cutscene, show player end credits
+	} else if (global.gameover) {
+		
+		//play lose cutscene, give player option to replay
+	}
+}
+
+function win() {
+	draw_rectangle(0, 0, 640, 320, false);
+	draw_text(250, 160,"You Win!");
+}
+
+function lose() {
+	draw_text(250, 160,"You Lose!");
 }

@@ -1,12 +1,25 @@
 // call movement script
-movement_scr(player_spd);
+if(!instance_exists(dialogcontroller_obj)){
+	movement_scr(player_spd);
+	
+	if(xprevious != x || yprevious != y) {
+		player_moving = true;
+	} else {
+		player_moving = false;
+	}
+	
+	movement_animation(player_moving);
+}
+
+// check win conditions
+check_win_cond(coordfound, passfound, routed);
 
 // check if player has interacted with anything
 var interact_key = keyboard_check_pressed(ord("E"));
 
 if (interact_key) {
 	// check for interaction at the place the player is standing at
-	var touched_item = instance_place(x, y, obj_interactable);
+	var touched_item = instance_place(x, y, interactable_obj);
 	
 	if(touched_item != noone) {
 		var target_id = touched_item.item_id;
@@ -39,7 +52,8 @@ if (interact_key) {
 		// for interactables with secrets, set the line_index to 1 if the secret has been found
 		// note that coordfound may be the wrong thing to check for (in general win conds, depends on
 		// how these are set
-		if(target_id == "console2" && coordfound) { 
+		if(target_id == "console2" && global.looptime_remaining > 50) {
+			coordfound = true;
 			line_index = 1; //
 		} else if (target_id == "console3" && passfound) {
 			line_index = 1;

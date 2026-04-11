@@ -1,7 +1,3 @@
-function display_dialog(_line){
-
-}
-
 global.item_dialog = {
 	console1: {
 		state1: ["The screen reads: ‘WARNING! EVENT HORIZON APPROACHED!’",  "It flashes an angry red."],
@@ -12,7 +8,7 @@ global.item_dialog = {
 	// 0 for notfound, 1 for found 
 	console2: {
 		state1: ["The screen flashes red, the image of the map broken and glitchy. You can't read the coordinates that usually appear on the bottom of the screen.",
-						"The screen glows green, the map displaying your current coordinates. You take note of the numbers"],
+						"The screen glows green, the map displaying your current coordinates. You take note of the numbers. "],
 		default_state: ["You’ve already found the coordinates."]
 	},
 	
