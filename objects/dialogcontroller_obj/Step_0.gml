@@ -4,7 +4,9 @@ if(keyboard_check_pressed(vk_space)) { // skip to end of dialog, or if at end, c
 		char_index = string_length(full_line);
 		displayed_line = full_line;
 	} else {
-		instance_destroy();
+		if(array_length(options) == 0) {// only want to destroy the instance after pressing space if no options exist.
+			instance_destroy();
+		}
 	}
 }
 	
@@ -32,7 +34,7 @@ if(char_index < string_length(full_line)) {
             current_selection = 0;
         }
 		
-		if(keyboard_check_pressed(vk_enter)) {
+		if(keyboard_check_pressed(vk_enter)) {  // if there are options, force the player to choose one in order to destroy the textbox
 			var chosen_action = option_actions[current_selection];
 			chosen_action();
 			instance_destroy();
