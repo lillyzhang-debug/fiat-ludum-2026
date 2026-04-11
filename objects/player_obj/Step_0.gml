@@ -12,6 +12,7 @@ if (interact_key) {
 		var target_id = touched_item.item_id;
 		
 		var current_state = 0;
+		var line_index = 0; //default to simple dialog line 
 		
 		// set current game state string based off the current state
 		switch (global.curr_gamestate) {
@@ -35,7 +36,24 @@ if (interact_key) {
 		else // if not, then just use the default line
 			dialog_array = item_struct.default_state;
 			
-		// for specifically console 1 and 2, check if we have found the required item to get the correct dialog
-		//if(target_id ==
+		// for interactables with secrets, set the line_index to 1 if the secret has been found
+		// note that coordfound may be the wrong thing to check for (in general win conds, depends on
+		// how these are set
+		if(target_id == "console2" && coordfound) { 
+			line_index = 1; //
+		} else if (target_id == "console3" && passfound) {
+			line_index = 1;
+		}
+		
+		if (line_index >= array_length(dialog_array)) {
+            line_index = 0; 
+        }
+		
+		var current_line = dialog_array[line_index];
+		
+		var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+		
+		dialogcontroller.full_line = current_line;
+
 	}
 }
