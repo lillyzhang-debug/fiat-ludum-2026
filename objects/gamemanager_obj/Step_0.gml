@@ -7,7 +7,7 @@ if(global.looptime_remaining <= 0) {
 	
 	// call some function to reset player to start position
 	player_obj.x = 320;
-	player_obj.y = 300;
+	player_obj.y = 250;
 	// call some function to reset timer gui too
 }
 	

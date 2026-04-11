@@ -42,8 +42,25 @@ global.item_dialog = {
 	
 	vent: {
 		state1: ["The vent rattles as you step on it."],
-		default_state: ["The vent cover is loose. Should you try to get the cover off?"],
-		selectyes: ["You struggle with the vent for a while. Nothing happens."] // need to figure out options
+		default_state: [{
+						text: "The vent cover is loose. Should you try to get the cover off?",
+						options: ["Try to take the cover off", "Leave"],
+						actions: [
+									function() {//play animation for x amount of time
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "You struggle with the lid for several moments, but the cover remains firmly on the vent.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_action = [];
+									},
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Time better used doing something else.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_action = [];
+									}
+										
+								]
+						}]
 	},
 	
 	chair: {

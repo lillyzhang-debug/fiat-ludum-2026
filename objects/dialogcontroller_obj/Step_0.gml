@@ -16,6 +16,28 @@ if(char_index < string_length(full_line)) {
 	displayed_line = string_copy(full_line, 1, floor(char_index));
 		
 } else {
-	// do nothing now, could add smth here later
+	if(array_length(options) > 0) {
+		if(keyboard_check_pressed(vk_down)){
+			current_selection -= 1;
+		}
+		if(keyboard_check_pressed(vk_up)) {
+			current_selection += 1;
+		}
+		
+		// Keep the selection cursor from going out of bounds!
+        // This makes it wrap around to the top/bottom smoothly.
+        if (current_selection < 0) {
+            current_selection = array_length(options) - 1;
+        } else if (current_selection >= array_length(options)) {
+            current_selection = 0;
+        }
+		
+		if(keyboard_check_pressed(vk_enter)) {
+			var chosen_action = actions[current_selection];
+			chosen_action();
+			instance_destroy();
+		}
+	}
+		
 }
 	
