@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"timerbar_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"timerbar_scr",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
