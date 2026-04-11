@@ -36,6 +36,7 @@
     {"id":{"name":"gamemanager_obj","path":"objects/gamemanager_obj/gamemanager_obj.yy",},},
     {"id":{"name":"interactable_obj","path":"objects/interactable_obj/interactable_obj.yy",},},
     {"id":{"name":"player_obj","path":"objects/player_obj/player_obj.yy",},},
+    {"id":{"name":"spaceship_obj","path":"objects/spaceship_obj/spaceship_obj.yy",},},
     {"id":{"name":"vent_obj","path":"objects/vent_obj/vent_obj.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"dialog_scr","path":"scripts/dialog_scr/dialog_scr.yy",},},
