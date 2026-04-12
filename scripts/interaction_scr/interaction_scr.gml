@@ -77,6 +77,12 @@ function interaction_scr(){
 					dialogcontroller.options = current_line.options;
 					dialogcontroller.option_actions = current_line.actions;
 				}
+				
+				// specific case for the tutorial rabbit
+				if(target_id == "wabbit") {
+					dialogcontroller.calling_char = "Professor Luup";
+				}
+				// might be bad, but i might just have to straight up hardcode each instance where the protag is directly speaking
 			}
 		}
 	}

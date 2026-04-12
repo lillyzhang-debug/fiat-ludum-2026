@@ -7,7 +7,7 @@ if (can_start) {
 	player_obj.tutorial_done = true;
 }
 
-if(instance_exists(dialogcontroller_obj)) {
+if(instance_exists(dialogcontroller_obj) && dialogcontroller_obj.calling_char == "Professor Luup") {
 	image_speed = 1;	
 } else {
 	image_speed = 0;

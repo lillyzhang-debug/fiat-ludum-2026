@@ -24,19 +24,19 @@ global.item_dialog = {
 	
 	cabinet1: {
 		state1: ["It’s full of rations and medkits. Not very helpful. Unless you want to go out eating freeze dried ice cream."],
-		state2: ["I’m not hungry."],
+		state2: ["Not the best final meal."],
 		state3: ["Why am I even looking in here?"]
 	},
 	
 	cabinet2: {
 		state1: ["Two spacesuits, size women’s L, are stored in the closet, alongside a spare lab coat.", "There is a toolkit on the floor of the cabinet."],
-		state2: ["Should I change clothes?"],
+		state2: ["No time to change clothes now."],
 		state3: ["Do I *want* to die?"]
 	},
 	
 	bed: {
-		state1: ["If you lay down, you die."],
-		state2: ["Maybe it would be more comfortable for when you go."],
+		state1: ["As if I could sleep now."],
+		state2: ["Maybe a nap wouldn't be so bad right now..."],
 		state3: ["I want to lie down."]
 	},
 	
@@ -145,6 +145,10 @@ global.item_dialog = {
 	
 	map: {
 		default_state: ["The map depicts the stars surrounding Scylla X-37 in the Charybdis galaxy. Recently, the cosmic rays emmitted from these stars have been exhibiting abnormal readings." ]
+	},
+	
+	deskchair: {
+		default_state: ["Your trusty desk chair. You'll be leaving it behind on your survey of Scylla X-37."]
 	}
 		
 }

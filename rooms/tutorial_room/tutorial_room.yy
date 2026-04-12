@@ -16,6 +16,8 @@
     {"name":"inst_3F38E9","path":"rooms/tutorial_room/tutorial_room.yy",},
     {"name":"inst_1F6EE618","path":"rooms/tutorial_room/tutorial_room.yy",},
     {"name":"inst_39632C84","path":"rooms/tutorial_room/tutorial_room.yy",},
+    {"name":"inst_5BF0D07A","path":"rooms/tutorial_room/tutorial_room.yy",},
+    {"name":"inst_20D632AD","path":"rooms/tutorial_room/tutorial_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -30,6 +32,8 @@
         {"$GMRInstance":"v4","%Name":"inst_23053FF7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23053FF7","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.8125,"scaleY":1.0,"x":282.0,"y":109.0,},
         {"$GMRInstance":"v4","%Name":"inst_3741721C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3741721C","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.4375,"scaleY":1.0,"x":165.0,"y":105.0,},
         {"$GMRInstance":"v4","%Name":"inst_1F6EE618","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1F6EE618","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.65625,"x":388.0,"y":192.0,},
+        {"$GMRInstance":"v4","%Name":"inst_5BF0D07A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5BF0D07A","objectId":{"name":"deskchair_obj","path":"objects/deskchair_obj/deskchair_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":336.0,"y":149.0,},
+        {"$GMRInstance":"v4","%Name":"inst_20D632AD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_20D632AD","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.59375,"scaleY":0.65625,"x":326.5,"y":139.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"room","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"room","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":20,"SerialiseWidth":40,"TileCompressedData":[
           -170,-2147483648,1,8,-17,12,1,4,-21,-2147483648,-19,12,-21,-2147483648,-19,12,-21,-2147483648,-19,12,

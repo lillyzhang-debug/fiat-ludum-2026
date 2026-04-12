@@ -1,15 +1,22 @@
-// draw dialog box underneath
-draw_sprite(dialogbox_spr, 0, 40, 220);
-
 // draw text on top
 draw_set_colour(c_white);
 draw_set_font(default_font);
+
+
+// draw dialog box underneath, choose between thoughts/spoken
+if(calling_char == "") {
+	draw_sprite(dialogbox_spr, 0, 40, 220);
+} else {
+	draw_sprite(dialogbox_spoken_spr, 0, 40, 190);
+	draw_text(52, 202, calling_char);
+}
 
 // set text max width and line spacing
 var line_spacing = 15;
 var line_width = 500
 	
-draw_text_ext(70, 240, displayed_line, line_spacing, line_width);
+draw_text_ext(65, 235, displayed_line, line_spacing, line_width);
+
 
 // draw options after main text is done 
 if(char_index >= string_length(full_line) && array_length(options) > 0) {
