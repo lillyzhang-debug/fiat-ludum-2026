@@ -10,8 +10,8 @@
   "name":"gameovermenucontroller_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"gui",
-    "path":"folders/gui.yy",
+    "name":"managers",
+    "path":"folders/managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

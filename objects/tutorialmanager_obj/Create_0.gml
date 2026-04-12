@@ -6,7 +6,10 @@ can_start = false;
 
 item_id = "wabbit";
 
-//--- PLACEHOLDER: TURN OFF MENU MUSIC ---
+//--- PLACEHOLDER: TURN OFF MENU MUSIC OR GAMEOVER MUSIC ---
+if(audio_exists(gameover)) {
+	audio_stop_sound(gameover);
+} 
 
 // play the tutorial sound
 audio_play_sound(tutorial_tune, 10, true);

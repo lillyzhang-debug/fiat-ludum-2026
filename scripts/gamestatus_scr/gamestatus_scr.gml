@@ -22,7 +22,7 @@ function gamestatus_scr(){
 			// final status, weirdest
 			break;
 		default:
-			gameover = true;
+			global.gameover = true;
 			break;
 			// game over
 	}

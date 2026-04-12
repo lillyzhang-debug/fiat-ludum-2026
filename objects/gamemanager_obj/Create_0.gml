@@ -2,7 +2,7 @@
 loopcount = 0; //game ends at 13
 
 // time taken per loop, countdown time
-looptime = 60;
+looptime = 1;
 global.looptime_remaining = looptime;
 global.loop_counter = 1;
 
