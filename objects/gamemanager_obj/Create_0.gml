@@ -7,15 +7,8 @@ global.looptime_remaining = looptime;
 global.loop_counter = 1;
 
 //activate/deactivate game 
-global.countdown_on = false;
-
-
-//check if win cond met OR if gameover
-if(global.gamewon) {
-	//end the game here, play win cutscene
-} else if (global.gameover) {
-	// play lose cutscene
-}
+// true for now, will be initially set to false later so the cutscene can be played
+global.countdown_on = true;
 
 audio_stop_sound(tutorial_tune); // turn off sound from tutorial
 

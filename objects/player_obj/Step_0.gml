@@ -4,11 +4,11 @@ if(!instance_exists(dialogcontroller_obj)){
 	player_moving = movement_scr(player_spd);
 	
 	if(player_moving) {
-		if (!audio_is_playing(footstep_loop)){
-			footstep_loop = audio_play_sound(footsteps_snd, 1, true);
+		if (!audio_is_playing(footsteps_snd)){
+			audio_play_sound(footsteps_snd, 1, true);
 		}
 	} else {
-		audio_stop_sound(footstep_loop);
+		audio_stop_sound(footsteps_snd);
 	}
 			
 	movement_animation(player_moving);

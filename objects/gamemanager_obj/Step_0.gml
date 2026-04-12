@@ -13,3 +13,18 @@ if (global.countdown_on) {
 	}
 }
 
+if(global.loop_counter > 13) { // game over condition
+	global.gameover = true;
+	show_debug_message("game over");
+}
+
+//check if win cond met OR if gameover
+if(global.gamewon) {
+	//end the game here, play win cutscene
+} 
+
+if (global.gameover) {
+	// play lose cutscene
+	show_debug_message("go to menu here");
+	room_goto(gameover_room);
+}
