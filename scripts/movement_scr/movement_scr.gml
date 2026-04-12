@@ -2,21 +2,21 @@ function movement_scr(_speed) {
 	var y_spd = 0;
 	var x_spd = 0;
 	    // Y-Axis 
-	if (keyboard_check(ord("W")) && place_meeting(x, y - _speed, spaceship_obj)) {
+	if (keyboard_check(ord("W"))) {
 	    y_spd -= _speed; // Up is minus
 		direction = 90;
 	}
-	else if (keyboard_check(ord("S")) && place_meeting(x, y + _speed, spaceship_obj)) {
+	else if (keyboard_check(ord("S"))) {
 	    y_spd += _speed; // Down is plus
 		direction = 270;
 	}
 
 	// X-Axis 
-	else if (keyboard_check(ord("A")) && place_meeting(x  - _speed, y, spaceship_obj)) {
+	else if (keyboard_check(ord("A"))) {
 	    x_spd -= _speed; // Left is minus
 		direction = 180;
 	}
-	else if (keyboard_check(ord("D")) && place_meeting(x + _speed, y, spaceship_obj)) {
+	else if (keyboard_check(ord("D"))) {
 	    x_spd += _speed; // Right is plus
 		direction = 0;
 	}

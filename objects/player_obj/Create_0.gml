@@ -1,3 +1,7 @@
+// tutorial completion 
+tutorial_done = false;
+
+// win conds
 coordfound = true;
 
 passfound = true;

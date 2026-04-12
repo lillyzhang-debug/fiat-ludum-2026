@@ -47,6 +47,12 @@ function interaction_scr(){
 				
 			} else if (target_id == "console3" && passfound) {
 				line_index = 1;
+			} else if (target_id == "wabbit" && !tutorial_done) {
+				line_index = 0;	
+				tutorialmanager_obj.interaction = true;
+				tutorialmanager_obj.movement = true;
+			} else if (target_id == "wabbit" && tutorial_done) {
+				line_index = 1;
 			}
 		
 			// check for invalid indicies

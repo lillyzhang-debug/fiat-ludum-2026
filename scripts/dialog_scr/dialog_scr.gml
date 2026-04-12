@@ -56,6 +56,7 @@ global.item_dialog = {
 										}
 										
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										fade.pause = 180;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
@@ -87,6 +88,30 @@ global.item_dialog = {
 		state1: ["The vast expanse of space stares back at you.",  "It’s strangely comforting, despite the current situation."],
 		state2: ["The vast expanse of space is not comforting anymore.", "The windows rattle as the overwhelming force of the black hole pulls the pod into its grasp."],
 		state3: ["You squeeze your eyes shut as the whole vessel shakes and rattles.", "You can’t bring yourself to open your eyes."]
+	},
+	
+	wabbit: {
+		default_state: [{
+							text: "Great work professor! You're ready to begin. Come talk to me one more time when you're ready to start.",
+							options: [],
+							actions: []
+						},
+						
+						{
+							text: "Best of luck on your voyage!",
+							options: ["Start game"],
+							actions: [
+										function() {
+											// fade to black, move to main room
+											
+											var fade = instance_create_depth(0, 0, -9999, fadetoblack_obj); /// this fade doesn't work lmao
+											
+											room_goto_next();
+										}
+							]
+						}
+						
+						]
 	}
 	
 }

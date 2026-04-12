@@ -1,4 +1,5 @@
 // call movement script
+depth = -y;
 if(!instance_exists(dialogcontroller_obj)){
 	player_moving = movement_scr(player_spd);
 	

@@ -12,7 +12,10 @@
     "name":"managers",
     "path":"folders/managers.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"interactable_obj",
+    "path":"objects/interactable_obj/interactable_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +32,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"wabbit_spr",
     "path":"sprites/wabbit_spr/wabbit_spr.yy",

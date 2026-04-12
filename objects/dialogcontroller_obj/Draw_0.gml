@@ -1,5 +1,5 @@
 // draw dialog box underneath
-draw_sprite(dialogbox_spr, 0, 40, 240);
+draw_sprite(dialogbox_spr, 0, 40, 220);
 
 // draw text on top
 draw_set_colour(c_white);
@@ -9,11 +9,11 @@ draw_set_font(default_font);
 var line_spacing = 15;
 var line_width = 500
 	
-draw_text_ext(70, 260, displayed_line, line_spacing, line_width);
+draw_text_ext(70, 240, displayed_line, line_spacing, line_width);
 
 // draw options after main text is done 
 if(char_index >= string_length(full_line) && array_length(options) > 0) {
-	var option_height = 280;
+	var option_height = 260;
 	var prefix = "";
 	
 	for (var i = 0; i < array_length(options); i++) {
