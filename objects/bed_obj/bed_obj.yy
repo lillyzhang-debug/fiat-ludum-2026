@@ -8,8 +8,8 @@
   "name":"bed_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"interactables",
-    "path":"folders/interactables.yy",
+    "name":"spaceship_objs",
+    "path":"folders/interactables/spaceship_objs.yy",
   },
   "parentObjectId":{
     "name":"interactable_obj",

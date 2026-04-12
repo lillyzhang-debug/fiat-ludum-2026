@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"console2_obj",
+  "%Name":"starmap_obj",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"player_obj","path":"objects/player_obj/player_obj.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"console2_obj",
+  "name":"starmap_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"spaceship_objs",
-    "path":"folders/interactables/spaceship_objs.yy",
+    "name":"tutorialroom_objs",
+    "path":"folders/interactables/tutorialroom_objs.yy",
   },
   "parentObjectId":{
     "name":"interactable_obj",
@@ -33,10 +31,10 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
-    "name":"console2_spr_placeholder",
-    "path":"sprites/console2_spr_placeholder/console2_spr_placeholder.yy",
+    "name":"starmap_spr",
+    "path":"sprites/starmap_spr/starmap_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

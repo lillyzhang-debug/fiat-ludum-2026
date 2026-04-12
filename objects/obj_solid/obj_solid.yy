@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"vent_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_solid",
+  "eventList":[],
   "managed":true,
-  "name":"vent_obj",
+  "name":"obj_solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"spaceship_objs",
-    "path":"folders/interactables/spaceship_objs.yy",
+    "name":"interactables",
+    "path":"folders/interactables.yy",
   },
-  "parentObjectId":{
-    "name":"interactable_obj",
-    "path":"objects/interactable_obj/interactable_obj.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"vent_placeholder",
-    "path":"sprites/vent_placeholder/vent_placeholder.yy",
+    "name":"solidtile",
+    "path":"sprites/solidtile/solidtile.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

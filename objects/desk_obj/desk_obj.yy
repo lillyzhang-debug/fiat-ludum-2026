@@ -8,8 +8,8 @@
   "name":"desk_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"interactables",
-    "path":"folders/interactables.yy",
+    "name":"tutorialroom_objs",
+    "path":"folders/interactables/tutorialroom_objs.yy",
   },
   "parentObjectId":{
     "name":"interactable_obj",

@@ -92,11 +92,12 @@ global.item_dialog = {
 	
 	wabbit: {
 		default_state: [{
-							text: "Great work professor! You're ready to begin. Come talk to me one more time when you're ready to start.",
+							text: "Great work professor! Looks like you got the hang of it. Head out the door behind you when you're ready. You can navigate through choices using the UP and DOWN buttons. Press Enter to select your choice. Best of luck!",
 							options: [],
 							actions: []
 						},
 						
+						/*
 						{
 							text: "Best of luck on your voyage!",
 							options: ["Start game"],
@@ -109,13 +110,42 @@ global.item_dialog = {
 											room_goto_next();
 										}
 							]
-						}
+						} */
 						
+						{
+							text: "Best of luck on your expedition, Professor Jeni!",
+							options: [],
+							actions: []
+						}
 						]
 	},
 	
 	desk: {
 		default_state: ["The desk holds stacks of documents about the Scylla X-37 black hole that you are currently investigating. The computer is open to a simulation of the black hole."]
+	},
+	
+	door: {
+		default_state: [{
+							text: "Are you ready to embark on your expedition? ",
+							options: ["Yes", "No"],
+							actions: [
+								function() {
+									room_goto_next(); // move to the actual game
+								},
+								function() {
+									//do nothing if we say no
+								}
+							]
+		}]
+	},
+	
+	bookshelf: {
+		default_state: ["The bookshelf is full of texts about the Charybdis galaxy. Several of the papers on the shelves are ones you authored."]
+	},
+	
+	map: {
+		default_state: ["The map depicts the stars surrounding Scylla X-37 in the Charybdis galaxy. Recently, the cosmic rays emmitted from these stars have been exhibiting abnormal readings." ]
 	}
+		
 }
 	

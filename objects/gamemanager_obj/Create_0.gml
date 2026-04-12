@@ -6,6 +6,9 @@ looptime = 60;
 global.looptime_remaining = looptime;
 global.loop_counter = 1;
 
+//activate/deactivate game 
+global.countdown_on = false;
+
 
 //check if win cond met OR if gameover
 if(global.gamewon) {

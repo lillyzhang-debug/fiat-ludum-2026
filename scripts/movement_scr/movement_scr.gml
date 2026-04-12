@@ -23,7 +23,8 @@ function movement_scr(_speed) {
 	
 	if (x_spd != 0 || y_spd != 0) {
 		collision_tilemap = layer_tilemap_get_id("collision_map");
-		move_and_collide(x_spd, y_spd, collision_tilemap);
+		var collision_array = [collision_tilemap, obj_solid];
+		move_and_collide(x_spd, y_spd, collision_array);
 		return true;
 	}
 	
