@@ -112,7 +112,10 @@ global.item_dialog = {
 						}
 						
 						]
-	}
+	},
 	
+	desk: {
+		default_state: ["The desk holds stacks of documents about the Scylla X-37 black hole that you are currently investigating. The computer is open to a simulation of the black hole."]
+	}
 }
 	
