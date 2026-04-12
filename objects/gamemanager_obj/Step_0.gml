@@ -2,7 +2,7 @@ if (global.countdown_on) {
 	// count down time here
 	global.looptime_remaining -= (delta_time / 1000000); //delta_time in microseconds
 	
-	var curr_horizon = variable_clone(global.fx_horizon);
+	var curr_horizon = global.fx_horizon;
 	layer_set_fx("fx_horizon", curr_horizon);
 	if (global.looptime_remaining < 30 && global.looptime_remaining > 0) {	
 		//layer_enable_fx("fx_horizon", true);

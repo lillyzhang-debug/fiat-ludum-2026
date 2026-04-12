@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"console2_spr_placeholder",
-    "path":"sprites/console2_spr_placeholder/console2_spr_placeholder.yy",
+    "name":"solidtile",
+    "path":"sprites/solidtile/solidtile.yy",
   },
   "spriteMaskId":null,
   "visible":true,
