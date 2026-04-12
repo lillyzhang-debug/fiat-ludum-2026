@@ -11,7 +11,6 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"backgrounds","folderPath":"folders/backgrounds.yy","name":"backgrounds","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"soundsfx","folderPath":"folders/soundsfx.yy","name":"soundsfx","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"gui","folderPath":"folders/gui.yy","name":"gui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"interactables","folderPath":"folders/interactables.yy","name":"interactables","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/interactables/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -19,6 +18,8 @@
     {"$GMFolder":"","%Name":"player stuff","folderPath":"folders/player stuff.yy","name":"player stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"rooms","folderPath":"folders/rooms.yy","name":"rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"scripts","folderPath":"folders/scripts.yy","name":"scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"soundsfx","folderPath":"folders/soundsfx.yy","name":"soundsfx","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"soundtrack","folderPath":"folders/soundsfx/soundtrack.yy","name":"soundtrack","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
@@ -55,6 +56,7 @@
     {"id":{"name":"movement_scr","path":"scripts/movement_scr/movement_scr.yy",},},
     {"id":{"name":"timerbar_scr","path":"scripts/timerbar_scr/timerbar_scr.yy",},},
     {"id":{"name":"footsteps_snd","path":"sounds/footsteps_snd/footsteps_snd.yy",},},
+    {"id":{"name":"tutorial_tune","path":"sounds/tutorial_tune/tutorial_tune.yy",},},
     {"id":{"name":"Background","path":"sprites/Background/Background.yy",},},
     {"id":{"name":"console2_spr_placeholder","path":"sprites/console2_spr_placeholder/console2_spr_placeholder.yy",},},
     {"id":{"name":"dialogbox_spr","path":"sprites/dialogbox_spr/dialogbox_spr.yy",},},

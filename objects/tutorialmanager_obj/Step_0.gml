@@ -13,3 +13,4 @@ if(instance_exists(dialogcontroller_obj)) {
 	image_speed = 0;
 	image_index = 0;
 }
+

@@ -14,3 +14,6 @@ if(global.gamewon) {
 	// play lose cutscene
 }
 
+audio_stop_sound(tutorial_tune); // turn off sound from tutorial
+
+// --- PLACEHOLDE: TURN ON MAIN GAME SONG ---
