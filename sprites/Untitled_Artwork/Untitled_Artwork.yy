@@ -19,6 +19,7 @@
   "height":360,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"10ba9f5c-d4f1-414e-aade-f31f9d396b43","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"10ba9f5c-d4f1-414e-aade-f31f9d396b43","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"824308b2-4a9d-4f05-96b8-431285ab7ea6","blendMode":0,"displayName":"default","isLocked":false,"name":"824308b2-4a9d-4f05-96b8-431285ab7ea6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Untitled_Artwork",
