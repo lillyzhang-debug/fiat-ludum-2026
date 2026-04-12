@@ -8,7 +8,7 @@ passfound = true;
 
 routed = true;
 
-player_spd = 1;
+player_spd = 1.5;
 
 player_moving = false;
 

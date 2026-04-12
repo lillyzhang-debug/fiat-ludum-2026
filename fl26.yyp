@@ -72,6 +72,7 @@
     {"id":{"name":"timerbar_scr","path":"scripts/timerbar_scr/timerbar_scr.yy",},},
     {"id":{"name":"footsteps_snd","path":"sounds/footsteps_snd/footsteps_snd.yy",},},
     {"id":{"name":"gameover","path":"sounds/gameover/gameover.yy",},},
+    {"id":{"name":"titletheme","path":"sounds/titletheme/titletheme.yy",},},
     {"id":{"name":"tutorial_tune","path":"sounds/tutorial_tune/tutorial_tune.yy",},},
     {"id":{"name":"Background","path":"sprites/Background/Background.yy",},},
     {"id":{"name":"bookshelf_spr","path":"sprites/bookshelf_spr/bookshelf_spr.yy",},},
