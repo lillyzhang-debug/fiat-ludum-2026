@@ -22,6 +22,14 @@ if (global.countdown_on && room == main_room) {
 		player_obj.x = 320;
 		player_obj.y = 200;
 		// call some function to reset timer gui too
+		// play loop indicator
+		if(!audio_is_playing(Loop)) {
+			audio_play_sound(Loop, 1, false);
+		}
+		
+		// destroy all dialog boxes if we're resetting
+		instance_destroy(dialogcontroller_obj);
+		
 	}
 }
 // here is the intro instrucitons
@@ -39,6 +47,8 @@ else {
 		if(!audio_started) {
 			if(!audio_is_playing(Distorted_Voice_Coms)) {
 				audio_play_sound(Distorted_Voice_Coms, 1, false);
+				audio_play_sound(Alarm, 3, true);
+				instance_destroy(dialogcontroller_obj);
 				audio_started = true;
 			}
 
@@ -53,7 +63,7 @@ else {
 	if(message_played && !dialog_spawned) {
 		var jeni_talk = instance_create_depth(0, 0 , -9999, dialogcontroller_obj);
 		jeni_talk.calling_char = "Professor Jeni";
-		jeni_talk.full_line = "What?! That's impossble! I should have been far enough away that-";
+		jeni_talk.full_line = "What?! That's impossible! I should have been far enough away that- This is bad... Scylla X-37 is...";
 		dialog_spawned = true;
 	}
 	
@@ -79,7 +89,18 @@ if(dialog3_spawned && room != main_room && !instance_exists(dialogcontroller_obj
 	fade.duration = 60;
 	fade.pause = 20;
 	fade.unfade = false;	
+	
+	audio_stop_sound(Alarm);
 }
+
+// after the first loop
+if(global.loop_counter == 2 && global.looptime_remaining == 60 && !first_loop_dialog) {
+	var dialog_first_loop = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+	dialog_first_loop.full_line = "Just as I thought... the gravity forces time to loop... Fascinating!";
+	dialog_first_loop.calling_char = "Professor Jeni";
+	first_loop_dialog = true;
+}	
+	
 
 if(global.loop_counter > 13) { // game over condition
 	global.gameover = true;
@@ -87,9 +108,12 @@ if(global.loop_counter > 13) { // game over condition
 }
 
 //check if win cond met OR if gameover
-if(global.gamewon) {
+if(global.curr_gamestate >= 4) {
 	//end the game here, play win cutscene
+	global.gamewon = true;
+	show_debug_message("game won!");
 } 
+
 
 if (global.gameover) {
 	// play lose cutscene

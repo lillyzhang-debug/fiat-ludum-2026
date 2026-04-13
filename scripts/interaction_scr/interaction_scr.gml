@@ -34,8 +34,23 @@ function interaction_scr(){
 			// check if the item has a struct entry for the current state
 			if(variable_struct_exists(item_struct, current_state))
 				var dialog_array = item_struct[$ current_state];
-			else // if not, then just use the default line
-				dialog_array = item_struct.default_state;
+			else { // if not, then just use the default line
+				// 1. First, make sure we actually found an object to interact with!
+				if (item_struct != noone) {
+    
+				    // 2. Ask GameMaker: "Does this specific object actually have dialogue?"
+				    if (variable_instance_exists(item_struct, "default_state")) {
+        
+				        // 3. It is safe! Read the array.
+				        dialog_array = item_struct.default_state;
+        
+				    } else {
+				        // This stops the crash if you accidentally talk to a wall or empty space!
+				        show_debug_message("ERROR: This object has no default_state!");
+				    }
+				}
+
+			}
 			
 			// for interactables with secrets, set the line_index to 1 if the secret has been found
 			// note that coordfound may be the wrong thing to check for (in general win conds, depends on
@@ -47,8 +62,11 @@ function interaction_scr(){
 					//maybe have dialogue abt like ...where do i put these .... something to direct the player
 				}
 				line_index = 1; //
-				
-			} else if (target_id == "console3" && passfound) {
+			
+			} else if (target_id == "window" && global.curr_gamestate == 2 && global.transciever_found) {
+					global.curr_gamestate++; // move to next state after earth transciever found
+			} else if (target_id == "console3" && global.curr_gamestate == 3 && global.looptime_remaining >= 50) {
+				global.curr_gamestate++; // player has won atp
 				line_index = 1;
 			} else if (target_id == "wabbit" && !tutorial_done) {
 				line_index = 0;	

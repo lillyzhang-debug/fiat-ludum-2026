@@ -4,11 +4,11 @@ if(!instance_exists(dialogcontroller_obj) && !audio_is_playing(Distorted_Voice_C
 	player_moving = movement_scr(player_spd);
 	
 	if(player_moving) {
-		if (!audio_is_playing(footsteps_snd)){
-			audio_play_sound(footsteps_snd, 1, true);
+		if (!audio_is_playing(Footsteps)){
+			audio_play_sound(Footsteps, 1, true);
 		}
 	} else {
-		audio_stop_sound(footsteps_snd);
+		audio_stop_sound(Footsteps);
 	}
 			
 	movement_animation(player_moving);
@@ -33,6 +33,7 @@ if(!instance_exists(dialogcontroller_obj) && !audio_is_playing(Distorted_Voice_C
 // have Jeni face forward while the comms are playing
 if(audio_is_playing(Distorted_Voice_Coms)) {
 	image_index = 0;
+	audio_stop_sound(footsteps_snd);
 }
 
 // check win conditions

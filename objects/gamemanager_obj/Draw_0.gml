@@ -10,6 +10,7 @@ if(global.countdown_on){
 	draw_circular_timer(35,40,global.looptime_remaining,60,c_orange,35,1,10);
 }
 
+draw_set_colour(c_white);
 draw_text(5, 150, "TEMP: STATE" + string(global.curr_gamestate));
 
 if(intro_length <= 0 && audio_is_playing(Distorted_Voice_Coms)) {

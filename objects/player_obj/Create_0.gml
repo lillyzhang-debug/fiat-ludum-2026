@@ -2,11 +2,11 @@
 tutorial_done = false;
 
 // win conds
-coordfound = true;
+coordfound = false;
 
-passfound = true;
+passfound = false;
 
-routed = true;
+routed = false;
 
 // player stats
 player_spd = 1.5;

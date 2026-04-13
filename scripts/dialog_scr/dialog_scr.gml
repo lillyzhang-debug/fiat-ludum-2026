@@ -9,38 +9,160 @@ global.item_dialog = {
 	// 0 for notfound, 1 for found 
 	console2: {
 		state0: ["The starmap of the surrounding stars twinkles green, quietly humming as it runs."],
-		state1: ["The screen flashes red, the image of the map broken and glitchy. You can't read the coordinates that usually appear on the bottom of the screen.",
-						"The screen glows green, the map displaying your current coordinates. You take note of the numbers. "],
+		state1: [{
+						text: "Examine the starmap?",
+						options: ["Check", "Leave"],
+						actions: [
+									function() {								
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										fade.duration = 0; 
+										fade.pause = 0;
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											if(global.looptime_remaining >= 51){
+												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+												dialogcontroller.full_line = "The ship's coordinates are displayed in bright lettering at the bottom of the screen. You take note.";
+												dialogcontroller.options = [];
+												dialogcontroller.option_actions = [];
+												if(!audio_is_playing(PositiveNotification)) {
+													audio_play_sound(PositiveNotification, 1, false);
+												}
+											} else {
+												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+												dialogcontroller.full_line = "The screen is flashing red as well, parts of it flickering on and off. It seems the proximity to the black hole has begun to destroy parts of the ship.";
+												dialogcontroller.options = [];
+												dialogcontroller.option_actions = [];
+												if(!audio_is_playing(NegativeNotification)) {
+													audio_play_sound(NegativeNotification, 1, false);
+												}
+											}
+										}
+										
+									},
+									
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Surely you didn't leave it there.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_actions = [];
+									}
+										
+								]
+						}],
 		default_state: ["You've already found the coordinates."]
 	},
 	
 	console3: {
 		state0: ["The central console. Communications to Earth are sent through this screen."],
-		state1: ["It's locked. Now where did you put the password?"],
-		state2: ["I need to access the router to send this message back to Earth…. Where is that password?!", "Found it! Let me enter the password..."],
-		state3: ["I just need to send the message."]
+		state1: ["The local network seems to be down. The ship's coordinates from the starmap can't be accessed through this console."],
+		state2: ["I need the Earth transciever to send my location back. Damn! Where did it go?!"],
+		state3: ["Fifty seconds for transmission... I don't know if we can make it.", "Come on, come on, go go go!"]
 	},
 	
 	photo: {
 		default_state: ["Your most treasured possession..."]
 	},
 	
+	plant: {
+		default_state: ["From top to bottom, the plants' names are Candy, Mandy, Randy...."]
+	},
+	
 	cabinet1: {
+		state0: ["Astronaut ice cream... Yummy!"],
 		state1: ["It’s full of rations and medkits. Not very helpful. Unless you want to go out eating freeze dried ice cream."],
 		state2: ["Not the best final meal."],
 		state3: ["Why am I even looking in here?"]
 	},
 	
 	cabinet2: {
-		state1: ["Two spacesuits, size women’s L, are stored in the closet, alongside a spare lab coat.", "There is a toolkit on the floor of the cabinet."],
-		state2: ["No time to change clothes now."],
-		state3: ["Do I *want* to die?"]
+		state0: ["Two spacesuits, size women's L, are stored in the closet, alongside a spare lab coat."],
+		state1: ["There is a toolkit on the floor of the cabinet. Unfortunately, the set of screwdrivers inside won't do much against a black hole."],
+		state2: [{
+						text: "Search for the transciever here?",
+						options: ["Flip through the pockets of the suits", "Leave"],
+						actions: [
+									function() {								
+										// fade the screen to black and decrement the timer by 15
+										// if there are not 15 seconds left, set the remaining time to 5
+										if(global.looptime_remaining > 15){
+											global.looptime_remaining -= 15;
+										} 
+										if(global.looptime_remaining < 6) {
+											global.looptime_remaining = 6;
+										}
+										
+										
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										fade.duration = 20; 
+										fade.pause = 60;
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+											dialogcontroller.full_line = "Unfortunately, all the pockets are empty. First time for everything.";
+											dialogcontroller.options = [];
+											dialogcontroller.option_actions = [];
+											if(!audio_is_playing(NegativeNotification)) {
+											audio_play_sound(NegativeNotification, 1, false);
+										}
+										}
+										
+									},
+									
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Surely you didn't leave it there.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_actions = [];
+									}
+										
+								]
+						}],
+		state3: ["Nothing in here."]
 	},
 	
 	bed: {
-		state1: ["As if I could sleep now."],
-		state2: ["Maybe a nap wouldn't be so bad right now..."],
-		state3: ["I want to lie down."]
+		state0: ["Your bed. You didn't make it this morning. Or night. Or in general."],
+		state1: ["You cannot sleep now!"],
+		state2: [{
+						text: "Search for the transciever here?",
+						options: ["Rummage around in the sheets", "Leave"],
+						actions: [
+									function() {								
+										// fade the screen to black and decrement the timer by 30
+										// if there are not 15 seconds left, set the remaining time to 5
+										if(global.looptime_remaining > 30){
+											global.looptime_remaining -= 30;
+										} 
+										if(global.looptime_remaining < 6) {
+											global.looptime_remaining = 6;
+										}
+										
+										
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										fade.pause = 60;
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+											dialogcontroller.full_line = "You flounder around on your bed for several moments, but you can't find anything.";
+											dialogcontroller.options = [];
+											dialogcontroller.option_actions = [];
+											if(!audio_is_playing(NegativeNotification)) {
+											audio_play_sound(NegativeNotification, 1, false);
+										}
+										}
+
+									},
+									
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Let's look somewhere else.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_actions = [];
+									}
+										
+								]
+						}],
+		state3: ["This close to the finish?"]
 	},
 	
 	vent: {
@@ -52,22 +174,28 @@ global.item_dialog = {
 						actions: [
 									function() {								
 										// fade the screen to black and decrement the timer by 15
-										// if there are not 15 seconds left, set the remaining time to 3
+										// if there are not 15 seconds left, set the remaining time to 5
 										if(global.looptime_remaining > 15){
 											global.looptime_remaining -= 15;
-										} else {
-											global.looptime_remaining = 3;
+										} 
+										if(global.looptime_remaining < 6) {
+											global.looptime_remaining = 6;
 										}
 										
+										
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
-										fade.pause = 180;
+										fade.pause = 60;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 											dialogcontroller.full_line = "You struggle with the lid for several moments, but the cover remains firmly on the vent.";
 											dialogcontroller.options = [];
 											dialogcontroller.option_actions = [];
+											if(!audio_is_playing(NegativeNotification)) {
+											audio_play_sound(NegativeNotification, 1, false);
 										}
+										}
+										
 
 									},
 									
@@ -92,8 +220,46 @@ global.item_dialog = {
 	window: {
 		state0: ["The stars wink at you."],
 		state1: ["The vast expanse of space stares back at you. It’s strangely comforting, despite the current situation."],
-		state2: ["The vast expanse of space is not comforting anymore. The windows rattle as the overwhelming force of the black hole pulls the pod into its grasp."],
-		state3: ["You squeeze your eyes shut as the whole vessel shakes and rattles. You can’t bring yourself to open your eyes."]
+		state2: [{
+						text: "Search for the transciever here?",
+						options: ["Dig around in the cushions", "Leave"],
+						actions: [
+									function() {								
+										// fade the screen to black and decrement the timer by 20
+										// if there are not 15 seconds left, set the remaining time to 5
+										if(global.looptime_remaining > 20){
+											global.looptime_remaining -= 20;
+										} 
+										if(global.looptime_remaining < 6) {
+											global.looptime_remaining = 6;
+										}
+										
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
+										fade.pause = 0;
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+											dialogcontroller.full_line = "Where is it... AHA! Found it! I need to get this to the console.";
+											dialogcontroller.options = [];
+											dialogcontroller.option_actions = [];
+										}
+										global.transciever_found = true;
+										if(!audio_is_playing(PositiveNotification)) {
+											audio_play_sound(PositiveNotification, 1, false);
+										}
+
+									},
+									
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Maybe not now.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_actions = [];
+									}
+										
+								]
+						}], // bc window covers the couch, you find tranciever key in the couch
+		state3: ["Is this really the time for stargazing?"]
 	},
 	
 	wabbit: {

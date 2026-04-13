@@ -14,6 +14,7 @@ dialog_spawned = false;
 dialog2_spawned = false;
 dialog3_spawned = false;
 
+first_loop_dialog =  false;
 // hold frame of comms dialog box
 dialog_frame = 0;
 
@@ -32,7 +33,7 @@ if(room == main_room) {
 audio_stop_sound(tutorial_tune); // turn off sound from tutorial
 
 // --- TURN ON MAIN GAME SONG ---
-if(!audio_is_playing(atgravitysedge)) {
+if(!audio_is_playing(atgravitysedge) && room == main_room) {
 	audio_play_sound(atgravitysedge, 1, true);
 }
 global.fx_horizon = layer_get_fx("fx_horizon");

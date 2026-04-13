@@ -35,12 +35,3 @@ function check_win_cond(cond1, cond2, cond3){
 	}
 }
 
-function game_win_or_lose(){
-	if(global.gamewon == true) {
-		win();
-		// play win cutscene, show player end credits
-	} else if (global.gameover) {
-		
-		//play lose cutscene, give player option to replay
-	}
-}

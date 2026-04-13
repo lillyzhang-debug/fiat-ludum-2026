@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"Object24",
-  "eventList":[],
+  "%Name":"plants_obj",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Object24",
+  "name":"plants_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"spaceship_objs",
     "path":"folders/interactables/spaceship_objs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"interactable_obj",
+    "path":"objects/interactable_obj/interactable_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -27,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"obj_cover",
+    "path":"sprites/obj_cover/obj_cover.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

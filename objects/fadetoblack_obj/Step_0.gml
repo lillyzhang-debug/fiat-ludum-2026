@@ -15,7 +15,14 @@ if(duration > 0) {
 	else if(unfade == true) { // can choose not to fade back to scene
 		if(fade_alpha > 0 && pause <= 0) {
 			fade_alpha -= fade_speed;
-		} 
+		} else {
+            // UNFADE IS FINISHED! Run the code and destroy!
+            if(on_complete != undefined) {
+                on_complete();
+                on_complete = undefined;
+            }
+            instance_destroy();
+        }
 	} else {
 		if(on_complete != undefined) {
 			on_complete();
