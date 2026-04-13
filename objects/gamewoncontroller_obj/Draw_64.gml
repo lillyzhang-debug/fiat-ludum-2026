@@ -5,7 +5,7 @@ switch (current_credit) {
 		break;
 	case "Lilly" :
 		draw_text(440, 160, "Lilly Zhang");
-		draw_text(440, 180, "Programming - Music");
+		draw_text(440, 180, "Programming - Music - Writing & Narrative");
 		draw_text(440, 200, "'Title Theme', 'Tutorial Theme', 'Game Over'");
 		break;
 	case "Phoenix" :

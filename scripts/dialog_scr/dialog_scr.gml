@@ -1,6 +1,6 @@
 global.item_dialog = {
 	console1: {
-		state0: ["All systems are normal. The screen is quiet."],
+		state0: ["All systems are normal. The screen is quiet. "],
 		state1: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
 		state2: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
 		state3: ["WHY AM I LOOKING AT THIS?!? I CAN SEE THE HORIZON *RIGHT* THERE!"]
@@ -64,7 +64,7 @@ global.item_dialog = {
 	},
 	
 	plant: {
-		state0: ["From top to bottom, the plants' names are Candy, Mandy, Randy... You were never the best at naming things.S"],
+		state0: ["From top to bottom, the plants' names are Candy, Mandy, Randy... You were never the best at naming things."],
 		default_state: ["In order to save your plants - you must persist!"]
 	},
 	

@@ -103,7 +103,7 @@ if(!intro_dialog && room == cutscene_room) {
 	intro_msg.calling_char = "Professor Jeni";
 	intro_dialog = true;
 }
-if(intro_dialog && !intro_dialog_2 && room == cutscene_room) {
+if(intro_dialog && !intro_dialog_2 && room == cutscene_room && !instance_exists(dialogcontroller_obj)) {
 	var intro_msg = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 	intro_msg.full_line = "You should take a look around the cabin - not like there's much else to do. You remember Professor Luup's lesson back at the home base. INTERACT with objects using E, MOVE using WASD, and hit SPACE to speed up dialog. "
 	intro_dialog_2 = true;
