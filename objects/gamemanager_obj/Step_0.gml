@@ -10,9 +10,6 @@ if (global.countdown_on && room == main_room) {
 		layer_set_visible("screen_shake", true);
 		fx_set_parameter(curr_horizon, "param_num_particles", 60 - 2*floor(global.looptime_remaining));
 	} else if(global.looptime_remaining <= 0) {
-		//layer_enable_fx("fx_horizon", false);
-		//layer_clear_fx("fx_horizon");
-		//curr_horizon = variable_clone(global.fx_horizon);
 		fx_set_parameter(curr_horizon, "param_num_particles",0);
 		 layer_set_visible("fx_horizon", false);
 		global.loop_counter += 1 ; 
@@ -140,9 +137,16 @@ if(global.loop_counter > 13 && !global.gameover) { // game over condition
 if(global.curr_gamestate >= 4 && !global.gamewon) {
 	//end the game here, play win cutscene
 	global.gamewon = true;
-	audio_play_sound(PositiveNotification, 1, false);
-	room_goto(gamewon_room);
-	show_debug_message("game won!");
+		audio_play_sound(PositiveNotification, 1, false);
+		show_debug_message("game won!");
 } 
+
+
+if (global.gamewon) {
+	layer_set_visible("screen_shake", true);
+	if (keyboard_check_pressed(vk_space)) {
+		room_goto(gamewon_room);
+	}
+}
 
 
