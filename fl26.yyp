@@ -43,7 +43,9 @@
   "name":"fl26",
   "resources":[
     {"id":{"name":"default_font","path":"fonts/default_font/default_font.yy",},},
+    {"id":{"name":"alarmstrobe_obj","path":"objects/alarmstrobe_obj/alarmstrobe_obj.yy",},},
     {"id":{"name":"bed_obj","path":"objects/bed_obj/bed_obj.yy",},},
+    {"id":{"name":"bookshelf_obj_1","path":"objects/bookshelf_obj_1/bookshelf_obj_1.yy",},},
     {"id":{"name":"bookshelf_obj","path":"objects/bookshelf_obj/bookshelf_obj.yy",},},
     {"id":{"name":"cabinet1_obj","path":"objects/cabinet1_obj/cabinet1_obj.yy",},},
     {"id":{"name":"cabinet2_obj","path":"objects/cabinet2_obj/cabinet2_obj.yy",},},

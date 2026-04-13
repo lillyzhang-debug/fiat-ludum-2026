@@ -116,7 +116,7 @@ if(global.loop_counter == 2 && global.looptime_remaining == 60 && !first_loop_di
 
 if(global.loop_counter == 3 && global.looptime_remaining == 60 && !first_loop_dialog) {
 	var dialog_first_loop = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-	dialog_first_loop.full_line = "It seems I can't keep my progress between loops.";
+	dialog_first_loop.full_line = "It seems my progress is RESET between loops... If I make it out alive, I've got to put this in my paper!";
 	dialog_first_loop.calling_char = "Professor Jeni";
 	second_loop_dialog = true;
 }

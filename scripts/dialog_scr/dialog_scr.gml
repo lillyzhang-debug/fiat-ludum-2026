@@ -215,7 +215,7 @@ global.item_dialog = {
 										// read out dialog line after we fade
 										fade.on_complete = function() {
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-											dialogcontroller.full_line = "You find some food wrappers, a remote control, and an old notebook. But no transciever.";
+											dialogcontroller.full_line = "You find some food wrappers, a remote control, and an old notebook. But no TRANSCIEVER.";
 											dialogcontroller.options = [];
 											dialogcontroller.option_actions = [];
 											if(!audio_is_playing(NegativeNotification)) {
@@ -245,7 +245,7 @@ global.item_dialog = {
 	
 	oxygen: {
 		state0: ["A few spare oxygen tanks sit on the steps. You should probably move them. At some point."],
-		default_state: ["Oxygen will not be helpful within the black hole."]
+		default_state: ["The canisters rattle against eachother, and you regret not moving these out of the way earlier. "]
 	},
 	
 	labbench: {
@@ -256,7 +256,7 @@ global.item_dialog = {
 	
 	wabbit: {
 		default_state: [{
-							text: "Great work professor! You're an expert in INTERACTING now!. Head out the EXIT when you're ready. You can navigate through choices using the UP and DOWN buttons. Press ENTER to select your choice. Bon Voyage!",
+							text: "Great work professor! You're an expert in INTERACTING now!. INTERACT with the EXIT when you're ready. You can navigate through choices using the UP and DOWN buttons. Press ENTER to select your choice. Best of luck on the survey!",
 							options: [],
 							actions: []
 						},
@@ -309,8 +309,12 @@ global.item_dialog = {
 		}]
 	},
 	
-	bookshelf: {
+	bookshelf1: {
 		default_state: ["The bookshelf is full of texts about the Charybdis galaxy. Several of the papers on the shelves are ones you authored."]
+	},
+	
+	bookshelf2: {
+		default_state: ["It's the same bookshelf. For redundancy."]
 	},
 	
 	map: {

@@ -1,1 +1,1 @@
-item_id = "bookshelf";
+item_id = "bookshelf2";
