@@ -11,8 +11,11 @@ if(duration > 0) {
 		//hold
 		pause -= 1;
 	}
-	else if(fade_alpha > 0 && pause <= 0) {
-		fade_alpha -= fade_speed;
+	
+	else if(unfade == true) { // can choose not to fade back to scene
+		if(fade_alpha > 0 && pause <= 0) {
+			fade_alpha -= fade_speed;
+		} 
 	} else {
 		if(on_complete != undefined) {
 			on_complete();

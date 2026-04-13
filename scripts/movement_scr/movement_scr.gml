@@ -6,17 +6,17 @@ function movement_scr(_speed) {
 	    y_spd -= _speed; // Up is minus
 		direction = 90;
 	}
-	else if (keyboard_check(ord("S"))) {
+	if (keyboard_check(ord("S"))) {
 	    y_spd += _speed; // Down is plus
 		direction = 270;
 	}
 
 	// X-Axis 
-	else if (keyboard_check(ord("A"))) {
+	if (keyboard_check(ord("A"))) {
 	    x_spd -= _speed; // Left is minus
 		direction = 180;
 	}
-	else if (keyboard_check(ord("D"))) {
+	if (keyboard_check(ord("D"))) {
 	    x_spd += _speed; // Right is plus
 		direction = 0;
 	}

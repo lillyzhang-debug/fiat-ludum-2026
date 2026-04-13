@@ -1,6 +1,6 @@
 // call movement script
 depth = -y;
-if(!instance_exists(dialogcontroller_obj)){
+if(!instance_exists(dialogcontroller_obj) && !audio_is_playing(Distorted_Voice_Coms)){
 	player_moving = movement_scr(player_spd);
 	
 	if(player_moving) {
@@ -29,6 +29,12 @@ if(!instance_exists(dialogcontroller_obj)){
 				break;
 		}
 }
+
+// have Jeni face forward while the comms are playing
+if(audio_is_playing(Distorted_Voice_Coms)) {
+	image_index = 0;
+}
+
 // check win conditions
 check_win_cond(coordfound, passfound, routed);
 

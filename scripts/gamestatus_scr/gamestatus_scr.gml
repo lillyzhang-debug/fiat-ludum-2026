@@ -44,12 +44,3 @@ function game_win_or_lose(){
 		//play lose cutscene, give player option to replay
 	}
 }
-
-function win() {
-	draw_rectangle(0, 0, 640, 320, false);
-	draw_text(250, 160,"You Win!");
-}
-
-function lose() {
-	draw_text(250, 160,"You Lose!");
-}

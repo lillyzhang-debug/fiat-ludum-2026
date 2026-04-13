@@ -8,8 +8,9 @@ passfound = true;
 
 routed = true;
 
+// player stats
 player_spd = 1.5;
 
 player_moving = false;
 
-footstep_loop = -1;
+//

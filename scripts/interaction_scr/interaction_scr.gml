@@ -14,6 +14,9 @@ function interaction_scr(){
 		
 			// set current game state string based off the current state
 			switch (global.curr_gamestate) {
+				case 0:
+					current_state = "state0";
+					break;
 				case 1:
 					current_state = "state1";
 					break;

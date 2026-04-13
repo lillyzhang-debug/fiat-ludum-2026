@@ -1,18 +1,21 @@
 global.item_dialog = {
 	console1: {
-		state1: ["The screen reads: ‘WARNING! EVENT HORIZON APPROACHED!’",  "It flashes an angry red."],
-		state2: ["The screen reads: ‘WARNING! EVENT HORIZON APPROACHED!’",  "It flashes an angry red."],
+		state0: ["All systems are normal. The screen is quiet."],
+		state1: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
+		state2: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
 		state3: ["WHY AM I LOOKING AT THIS?!? I CAN SEE THE HORIZON *RIGHT* THERE!"]
 	},
 	
 	// 0 for notfound, 1 for found 
 	console2: {
+		state0: ["The starmap of the surrounding stars twinkles green, quietly humming as it runs."],
 		state1: ["The screen flashes red, the image of the map broken and glitchy. You can't read the coordinates that usually appear on the bottom of the screen.",
 						"The screen glows green, the map displaying your current coordinates. You take note of the numbers. "],
 		default_state: ["You've already found the coordinates."]
 	},
 	
 	console3: {
+		state0: ["The central console. Communications to Earth are sent through this screen."],
 		state1: ["It's locked. Now where did you put the password?"],
 		state2: ["I need to access the router to send this message back to Earth…. Where is that password?!", "Found it! Let me enter the password..."],
 		state3: ["I just need to send the message."]
@@ -41,6 +44,7 @@ global.item_dialog = {
 	},
 	
 	vent: {
+		state0: ["Just a vent."],
 		state1: ["The vent rattles as you step on it."],
 		default_state: [{
 						text: "The vent cover is loose. Should you try to get the cover off?",
@@ -79,15 +83,17 @@ global.item_dialog = {
 	},
 	
 	chair: {
+		state0: ["Your trusty pilot's seat. It's pretty comfortable."],
 		state1: ["The chair you sit in during more normal situations. No time to sit now."],
-		state2: ["Ugh, move out of the way!"],
-		state3: ["You shove the chair to the side."]
+		state2: ["Can't take a seat."],
+		state3: ["Looking at this seems unhelpful."]
 	},
 
 	window: {
-		state1: ["The vast expanse of space stares back at you.",  "It’s strangely comforting, despite the current situation."],
-		state2: ["The vast expanse of space is not comforting anymore.", "The windows rattle as the overwhelming force of the black hole pulls the pod into its grasp."],
-		state3: ["You squeeze your eyes shut as the whole vessel shakes and rattles.", "You can’t bring yourself to open your eyes."]
+		state0: ["The stars wink at you."],
+		state1: ["The vast expanse of space stares back at you. It’s strangely comforting, despite the current situation."],
+		state2: ["The vast expanse of space is not comforting anymore. The windows rattle as the overwhelming force of the black hole pulls the pod into its grasp."],
+		state3: ["You squeeze your eyes shut as the whole vessel shakes and rattles. You can’t bring yourself to open your eyes."]
 	},
 	
 	wabbit: {
@@ -130,7 +136,13 @@ global.item_dialog = {
 							options: ["Yes", "No"],
 							actions: [
 								function() {
-									room_goto_next(); // move to the actual game
+									var fade = instance_create_depth(0, 0, -9999, fadetoblack_obj);
+									fade.on_complete = function() {
+																		room_goto(cutscene_room);
+																	};
+									fade.duration = 80;
+									fade.pause = 60;
+									fade.unfade = false;
 								},
 								function() {
 									//do nothing if we say no

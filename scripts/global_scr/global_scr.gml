@@ -4,5 +4,5 @@ global.gameover = false; // set this to true once loopcount == 13
 
 global.gamewon = false; // set this to true once the player has completed all 3 win conditions
 
-global.curr_gamestate = 1; // 1, 2, or 3
+global.curr_gamestate = 0; // 0 (cutscene) 1, 2, or 3
 	

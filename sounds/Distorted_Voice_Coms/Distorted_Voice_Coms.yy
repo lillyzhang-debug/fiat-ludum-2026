@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Distorted_Voice_Coms",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":16.339365,
+  "exportDir":"",
+  "name":"Distorted_Voice_Coms",
+  "parent":{
+    "name":"soundsfx",
+    "path":"folders/soundsfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Distorted_Voice_Coms.wav",
+  "volume":1.0,
+}
