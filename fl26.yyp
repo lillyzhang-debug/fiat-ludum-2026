@@ -98,6 +98,7 @@
     {"id":{"name":"gameover","path":"sounds/gameover/gameover.yy",},},
     {"id":{"name":"Introductory_Theme","path":"sounds/Introductory_Theme/Introductory_Theme.yy",},},
     {"id":{"name":"Loop","path":"sounds/Loop/Loop.yy",},},
+    {"id":{"name":"NavShutdown","path":"sounds/NavShutdown/NavShutdown.yy",},},
     {"id":{"name":"NegativeNotification","path":"sounds/NegativeNotification/NegativeNotification.yy",},},
     {"id":{"name":"PositiveNotification","path":"sounds/PositiveNotification/PositiveNotification.yy",},},
     {"id":{"name":"Slam","path":"sounds/Slam/Slam.yy",},},

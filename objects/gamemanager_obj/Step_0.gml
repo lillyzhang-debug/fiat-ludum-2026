@@ -2,6 +2,21 @@ if (global.countdown_on && room == main_room) {
 	// count down time here
 	global.looptime_remaining -= (delta_time / 1000000); //delta_time in microseconds
 	
+	if (floor(global.looptime_remaining) ==  50 && global.curr_gamestate == 1 ) {
+		console_down = true;
+		if(!audio_is_playing(NavShutdown)) {
+			audio_play_sound(NavShutdown, 1, false);
+		}
+		
+	}
+	
+	if (console_down) {
+		var dialog_console_down = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+		dialog_console_down.full_line = "...?!";
+		dialog_console_down.calling_char = "Professor Jeni";
+		console_down = false;
+	}
+	
 	var curr_horizon = global.fx_horizon;
 	layer_set_fx("fx_horizon", curr_horizon);
 	if (global.looptime_remaining < 30 && global.looptime_remaining > 0) {	

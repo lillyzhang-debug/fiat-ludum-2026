@@ -15,6 +15,7 @@ message_played = false;
 dialog_spawned = false;
 dialog2_spawned = false;
 dialog3_spawned = false;
+console_down = false;
 
 first_loop_dialog =  false;
 second_loop_dialog = false;
