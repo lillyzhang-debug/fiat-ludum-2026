@@ -145,6 +145,13 @@ if(global.curr_gamestate >= 4 && !global.gamewon) {
 if (global.gamewon) {
 	layer_set_visible("screen_shake", true);
 	if (keyboard_check_pressed(vk_space)) {
+		//var fade = instance_create_depth(0, 0, -9999, fadetoblack_obj);
+		//fade.on_complete = function() {
+		//								room_goto(gamewon_room);
+		//							};
+		//fade.duration = 60;
+		//fade.pause = 20;
+		//fade.unfade = true;	
 		room_goto(gamewon_room);
 	}
 }

@@ -25,3 +25,4 @@ switch (current_credit) {
 		draw_text(440, 180, "Press ENTER to return to the Main Menu");
 		break;
 }
+show_debug_message(current_credit);

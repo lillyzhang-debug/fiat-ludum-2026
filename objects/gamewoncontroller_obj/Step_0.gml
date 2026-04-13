@@ -2,6 +2,7 @@
 if(credits_roll >= watch_this_long) {
 	if(keyboard_check_pressed(vk_enter)) {
 		//audio_stop_sound(gameover);
+		credits_roll = 0;
 		game_restart(); // escape to main menu
 	}
 } 
