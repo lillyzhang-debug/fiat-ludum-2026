@@ -11,6 +11,9 @@ if (global.countdown_on && room == main_room) {
 	}
 	
 	if (console_down) {
+		if (instance_exists(dialogcontroller_obj)) {
+			instance_destroy(dialogcontroller_obj);
+		}
 		var dialog_console_down = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 		dialog_console_down.full_line = "...?!";
 		dialog_console_down.calling_char = "Professor Jeni";
@@ -60,6 +63,9 @@ else {
 	if(intro_length <= 0 && room == cutscene_room) { // once the intro time is over, play the warning
 		layer_set_visible("screen_shake", true);
 		if(!audio_started) {
+			if (instance_exists(dialogcontroller_obj)) {
+			instance_destroy(dialogcontroller_obj);
+		}
 			if(!audio_is_playing(Distorted_Voice_Coms)) {
 				audio_play_sound(Distorted_Voice_Coms, 1, false);
 				audio_play_sound(Alarm, 3, true);
