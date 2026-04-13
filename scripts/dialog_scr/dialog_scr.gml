@@ -1,6 +1,6 @@
 global.item_dialog = {
 	console1: {
-		state0: ["All systems are normal. The screen is quiet."],
+		state0: ["All systems are normal. The screen is quiet. "],
 		state1: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
 		state2: ["The screen reads: 'WARNING! EVENT HORIZON APPROACHED!'",  "It flashes an angry red."],
 		state3: ["WHY AM I LOOKING AT THIS?!? I CAN SEE THE HORIZON *RIGHT* THERE!"]
@@ -8,7 +8,7 @@ global.item_dialog = {
 	
 	// 0 for notfound, 1 for found 
 	console2: {
-		state0: ["The starmap of the surrounding stars twinkles green, quietly humming as it runs."],
+		state0: ["The starmap of the surrounding stars twinkles green, the computer quietly humming beneath it. This console directly links to your TABLET, which you use in your experiments and for communications."],
 		state1: [{
 						text: "Examine the starmap?",
 						options: ["Check", "Leave"],
@@ -19,9 +19,9 @@ global.item_dialog = {
 										fade.pause = 0;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
-											if(global.looptime_remaining >= 51){
+											if(global.looptime_remaining >= 45){
 												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-												dialogcontroller.full_line = "The ship's coordinates are displayed in bright lettering at the bottom of the screen. You take note.";
+												dialogcontroller.full_line = "The ship's coordinates are displayed in bright lettering at the bottom of the screen. You pull them from the console onto your TABLET. Now to get the TRANSCIEVER...";
 												dialogcontroller.options = [];
 												dialogcontroller.option_actions = [];
 												if(!audio_is_playing(PositiveNotification)) {
@@ -29,7 +29,7 @@ global.item_dialog = {
 												}
 											} else {
 												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-												dialogcontroller.full_line = "The screen is flashing red as well, parts of it flickering on and off. It seems the proximity to the black hole has begun to destroy parts of the ship.";
+												dialogcontroller.full_line = "The screen is flashing red, parts of it flickering on and off. It seems the ship's proximity to the black hole has begun to destroy parts of the ship, starting with the computers.";
 												dialogcontroller.options = [];
 												dialogcontroller.option_actions = [];
 												if(!audio_is_playing(NegativeNotification)) {
@@ -42,7 +42,7 @@ global.item_dialog = {
 									
 									function() { // indicate you leave
 										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-										dialogcontroller.full_line = "Surely you didn't leave it there.";
+										dialogcontroller.full_line = "You turn away from the screen.";
 										dialogcontroller.options = [];
 										dialogcontroller.option_actions = [];
 									}
@@ -53,10 +53,10 @@ global.item_dialog = {
 	},
 	
 	console3: {
-		state0: ["The central console. Communications to Earth are sent through this screen."],
+		state0: ["The central console. Communications to Earth and other planets are sent through this screen using TRANSCIEVERS. There are several ports for each transciever on the ship."],
 		state1: ["The local network seems to be down. The ship's coordinates from the starmap can't be accessed through this console."],
-		state2: ["I need the Earth transciever to send my location back. Damn! Where did it go?!"],
-		state3: ["Fifty seconds for transmission... I don't know if we can make it.", "Come on, come on, go go go!"]
+		state2: ["You need the Earth TRANSCIEVER to send your location back. Damn! Where did it go?!"],
+		state3: ["Thirty seconds for transmission... I don't know if it'll make it.", "You squeeze your eyes shut, heart thumping in your chest as the TRANSCIEVER beeps steadily, transferring your location back home."]
 	},
 	
 	photo: {
@@ -64,36 +64,28 @@ global.item_dialog = {
 	},
 	
 	plant: {
-		default_state: ["From top to bottom, the plants' names are Candy, Mandy, Randy...."]
+		state0: ["From top to bottom, the plants' names are Candy, Mandy, Randy... You were never the best at naming things."],
+		default_state: ["In order to save your plants - you must persist!"]
 	},
 	
 	cabinet1: {
-		state0: ["Astronaut ice cream... Yummy!"],
-		state1: ["It’s full of rations and medkits. Not very helpful. Unless you want to go out eating freeze dried ice cream."],
+		state0: ["The cabinet is full of rations and medkits. Astronaut ice cream... Yummy!"],
+		state1: ["It's full of rations and medkits. Not very helpful. Unless you want to go out eating freeze dried ice cream."],
 		state2: ["Not the best final meal."],
 		state3: ["Why am I even looking in here?"]
 	},
 	
 	cabinet2: {
-		state0: ["Two spacesuits, size women's L, are stored in the closet, alongside a spare lab coat."],
-		state1: ["There is a toolkit on the floor of the cabinet. Unfortunately, the set of screwdrivers inside won't do much against a black hole."],
+		state0: ["A spacesuit, size women's L, is stored in the case, alongside a spare lab coat. There may or may not be a large coffee stain on the leg of the spacesuit."],
+		state1: ["There is a toolkit tossed lazily on the floor of the cabinet. Unfortunately, the set of screwdrivers inside won't do much against a black hole."],
 		state2: [{
 						text: "Search for the transciever here?",
 						options: ["Flip through the pockets of the suits", "Leave"],
 						actions: [
 									function() {								
 										// fade the screen to black and decrement the timer by 15
-										// if there are not 15 seconds left, set the remaining time to 5
-										if(global.looptime_remaining > 15){
-											global.looptime_remaining -= 15;
-										} 
-										if(global.looptime_remaining < 6) {
-											global.looptime_remaining = 6;
-										}
-										
-										
-										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
-										fade.duration = 20; 
+						
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj); 
 										fade.pause = 60;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
@@ -121,8 +113,8 @@ global.item_dialog = {
 	},
 	
 	bed: {
-		state0: ["Your bed. You didn't make it this morning. Or night. Or in general."],
-		state1: ["You cannot sleep now!"],
+		state0: ["Your bed. You didn't make it this morning. Or night. Or in general. The blankets are heaped on the mattress in an unseemly pile."],
+		state1: ["As nice as crawling into bed sounds, you doubt it's the right course of action in this situation."],
 		state2: [{
 						text: "Search for the transciever here?",
 						options: ["Rummage around in the sheets", "Leave"],
@@ -130,25 +122,19 @@ global.item_dialog = {
 									function() {								
 										// fade the screen to black and decrement the timer by 30
 										// if there are not 15 seconds left, set the remaining time to 5
-										if(global.looptime_remaining > 30){
-											global.looptime_remaining -= 30;
-										} 
-										if(global.looptime_remaining < 6) {
-											global.looptime_remaining = 6;
-										}
-										
-										
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
 										fade.pause = 60;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
+										
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-											dialogcontroller.full_line = "You flounder around on your bed for several moments, but you can't find anything.";
+											dialogcontroller.full_line = "Where is it... AHA! Found it! I need to get this to the console.";
 											dialogcontroller.options = [];
 											dialogcontroller.option_actions = [];
-											if(!audio_is_playing(NegativeNotification)) {
-											audio_play_sound(NegativeNotification, 1, false);
-										}
+											global.transciever_found = true;
+											if(!audio_is_playing(PositiveNotification)) {
+												audio_play_sound(PositiveNotification, 1, false);
+											}
 										}
 
 									},
@@ -173,20 +159,17 @@ global.item_dialog = {
 						options: ["Try to take the cover off", "Leave"],
 						actions: [
 									function() {								
-										// fade the screen to black and decrement the timer by 15
-										// if there are not 15 seconds left, set the remaining time to 5
-										if(global.looptime_remaining > 15){
-											global.looptime_remaining -= 15;
-										} 
-										if(global.looptime_remaining < 6) {
-											global.looptime_remaining = 6;
-										}
-										
-										
+										// fade the screen to black 
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
 										fade.pause = 60;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
+											if(global.looptime_remaining > 10){
+												global.looptime_remaining -= 10;
+											} 
+											if(global.looptime_remaining < 6) {
+												global.looptime_remaining = 6;
+											}
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
 											dialogcontroller.full_line = "You struggle with the lid for several moments, but the cover remains firmly on the vent.";
 											dialogcontroller.options = [];
@@ -201,7 +184,7 @@ global.item_dialog = {
 									
 									function() { // indicate you leave
 										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-										dialogcontroller.full_line = "Time better used doing something else.";
+										dialogcontroller.full_line = "Just leave it alone.";
 										dialogcontroller.options = [];
 										dialogcontroller.option_actions = [];
 									}
@@ -218,8 +201,8 @@ global.item_dialog = {
 	},
 
 	window: {
-		state0: ["The stars wink at you."],
-		state1: ["The vast expanse of space stares back at you. It’s strangely comforting, despite the current situation."],
+		state0: ["The stars wink at you. You wink back, as always."],
+		state1: ["The vast expanse of space stares back at you. It's strangely comforting, despite the current situation."],
 		state2: [{
 						text: "Search for the transciever here?",
 						options: ["Dig around in the cushions", "Leave"],
@@ -227,26 +210,19 @@ global.item_dialog = {
 									function() {								
 										// fade the screen to black and decrement the timer by 20
 										// if there are not 15 seconds left, set the remaining time to 5
-										if(global.looptime_remaining > 20){
-											global.looptime_remaining -= 20;
-										} 
-										if(global.looptime_remaining < 6) {
-											global.looptime_remaining = 6;
-										}
-										
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
 										fade.pause = 0;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-											dialogcontroller.full_line = "Where is it... AHA! Found it! I need to get this to the console.";
+											dialogcontroller.full_line = "You find some food wrappers, a remote control, and an old notebook. But no transciever.";
 											dialogcontroller.options = [];
 											dialogcontroller.option_actions = [];
+											if(!audio_is_playing(NegativeNotification)) {
+											audio_play_sound(NegativeNotification, 1, false);
+											}
 										}
-										global.transciever_found = true;
-										if(!audio_is_playing(PositiveNotification)) {
-											audio_play_sound(PositiveNotification, 1, false);
-										}
+										
 
 									},
 									
@@ -262,9 +238,25 @@ global.item_dialog = {
 		state3: ["Is this really the time for stargazing?"]
 	},
 	
+	toolbox: {
+		state0: ["Your toolbox sits on the ground, it's contents spilled all over. You were fixing the loose vent before you got distracted."],
+		default_state: ["As you dash around the ship, you stub your toe on the metal box. Ouch!"]
+	},
+	
+	oxygen: {
+		state0: ["A few spare oxygen tanks sit on the steps. You should probably move them. At some point."],
+		default_state: ["Oxygen will not be helpful within the black hole."]
+	},
+	
+	labbench: {
+		state0: ["A small lab bench used for short experiements that can be done in this small ship."],
+		default_state: ["It's not the time to run any titrations."]
+	},
+	
+	
 	wabbit: {
 		default_state: [{
-							text: "Great work professor! Looks like you got the hang of it. Head out the door behind you when you're ready. You can navigate through choices using the UP and DOWN buttons. Press Enter to select your choice. Best of luck!",
+							text: "Great work professor! You're an expert in INTERACTING now!. Head out the EXIT when you're ready. You can navigate through choices using the UP and DOWN buttons. Press ENTER to select your choice. Bon Voyage!",
 							options: [],
 							actions: []
 						},
@@ -322,7 +314,7 @@ global.item_dialog = {
 	},
 	
 	map: {
-		default_state: ["The map depicts the stars surrounding Scylla X-37 in the Charybdis galaxy. Recently, the cosmic rays emmitted from these stars have been exhibiting abnormal readings." ]
+		default_state: ["The map depicts the stars surrounding Scylla X-37 in the Charybdis galaxy. Recently, the cosmic rays emitted from these stars have been exhibiting abnormal readings." ]
 	},
 	
 	deskchair: {

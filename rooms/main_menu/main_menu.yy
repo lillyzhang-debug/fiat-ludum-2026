@@ -20,7 +20,7 @@
         {"name":"g_RipplesWidth","type":0,"value":"64",},
         {"name":"g_RipplesAmplitude","type":0,"value":"0.075",},
         {"name":"g_RipplesRadius","type":0,"value":"0",},
-      ],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"Background","path":"sprites/Background/Background.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+      ],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"title_screen_spr","path":"sprites/title_screen_spr/title_screen_spr.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"main_menu",
   "parent":{
