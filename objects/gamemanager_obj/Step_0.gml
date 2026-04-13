@@ -2,7 +2,7 @@ if (global.countdown_on && room == main_room) {
 	// count down time here
 	global.looptime_remaining -= (delta_time / 1000000); //delta_time in microseconds
 	
-	if (floor(global.looptime_remaining) ==  50 && global.curr_gamestate == 1 ) {
+	if (floor(global.looptime_remaining) == 45 && global.curr_gamestate == 1 ) {
 		console_down = true;
 		if(!audio_is_playing(NavShutdown)) {
 			audio_play_sound(NavShutdown, 1, false);
@@ -10,7 +10,7 @@ if (global.countdown_on && room == main_room) {
 		
 	}
 	
-	if (console_down) {
+	if (console_down && global.loop_counter == 1) {
 		if (instance_exists(dialogcontroller_obj)) {
 			instance_destroy(dialogcontroller_obj);
 		}

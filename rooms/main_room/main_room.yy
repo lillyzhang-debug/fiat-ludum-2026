@@ -37,6 +37,7 @@
     {"name":"inst_250BB356","path":"rooms/main_room/main_room.yy",},
     {"name":"inst_5641452C","path":"rooms/main_room/main_room.yy",},
     {"name":"inst_77A73213","path":"rooms/main_room/main_room.yy",},
+    {"name":"inst_25851F8D","path":"rooms/main_room/main_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -62,7 +63,8 @@
           ],"depth":-500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"lights","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
         {"$GMRAssetLayer":"","%Name":"desklights","assets":[
             {"$GMRSpriteGraphic":"v1","%Name":"graphic_4A368D39","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_4A368D39","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"desk_light2","path":"sprites/desk_light2/desk_light2.yy",},"x":0.0,"y":-32.0,},
-          ],"depth":-400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"desklights","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+            {"$GMRSpriteGraphic":"v1","%Name":"graphic_78B7A2F9","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_78B7A2F9","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"desk_error","path":"sprites/desk_error/desk_error.yy",},"x":0.0,"y":-32.0,},
+          ],"depth":-400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"desklights","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
       ],"name":"desk","properties":[
         {"name":"g_Blend","type":0,"value":"1",},
       ],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
@@ -94,6 +96,7 @@
         {"$GMRInstance":"v4","%Name":"inst_39FB2EA5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_39FB2EA5","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.36204767,"scaleY":0.45,"x":365.7145,"y":204.2705,},
         {"$GMRInstance":"v4","%Name":"inst_250BB356","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_250BB356","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":-39.520218,"scaleX":0.22646713,"scaleY":0.60774684,"x":190.0,"y":180.0,},
         {"$GMRInstance":"v4","%Name":"inst_5641452C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5641452C","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.9186382,"scaleY":0.4249783,"x":442.85373,"y":166.4007,},
+        {"$GMRInstance":"v4","%Name":"inst_25851F8D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25851F8D","objectId":{"name":"obj_desk","path":"objects/obj_desk/obj_desk.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-32.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"interior","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_2B26E8F5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2B26E8F5","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"wall","path":"sprites/wall/wall.yy",},"x":0.0,"y":-32.0,},

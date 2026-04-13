@@ -21,7 +21,6 @@ first_loop_dialog =  false;
 second_loop_dialog = false;
 // hold frame of comms dialog box
 dialog_frame = 0;
-
 // activate/deactivate game countdown and current gamestate
 // based off room
 if(room == main_room) {
