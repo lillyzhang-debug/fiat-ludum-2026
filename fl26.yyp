@@ -116,6 +116,7 @@
     {"id":{"name":"chair","path":"sprites/chair/chair.yy",},},
     {"id":{"name":"commsdialog_spr","path":"sprites/commsdialog_spr/commsdialog_spr.yy",},},
     {"id":{"name":"console2_spr_placeholder","path":"sprites/console2_spr_placeholder/console2_spr_placeholder.yy",},},
+    {"id":{"name":"desk_error","path":"sprites/desk_error/desk_error.yy",},},
     {"id":{"name":"desk_light2","path":"sprites/desk_light2/desk_light2.yy",},},
     {"id":{"name":"desk","path":"sprites/desk/desk.yy",},},
     {"id":{"name":"deskchair_spr","path":"sprites/deskchair_spr/deskchair_spr.yy",},},
