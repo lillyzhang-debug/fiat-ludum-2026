@@ -21,6 +21,9 @@ if (global.countdown_on && room == main_room) {
 		// call some function to reset player to start position
 		player_obj.x = 320;
 		player_obj.y = 200;
+		//reset state progress back to 1, remove transciever from inventory
+		global.curr_gamestate = 1;
+		global.transciever_found = false;
 		// call some function to reset timer gui too
 		// play loop indicator
 		if(!audio_is_playing(Loop)) {
@@ -42,7 +45,7 @@ else {
 	
 	intro_length -= (delta_time / 1000000); //delta_time in microseconds
 	
-	if(intro_length <= 0) { // once the intro time is over, play the warning
+	if(intro_length <= 0 && room == cutscene_room) { // once the intro time is over, play the warning
 		layer_set_visible("screen_shake", true);
 		if(!audio_started) {
 			if(!audio_is_playing(Distorted_Voice_Coms)) {
@@ -81,7 +84,7 @@ if(dialog2_spawned && !dialog3_spawned && !instance_exists(dialogcontroller_obj)
 	dialog3_spawned = true;
 }
 
-if(dialog3_spawned && room != main_room && !instance_exists(dialogcontroller_obj)) {
+if(dialog3_spawned && room == cutscene_room && !instance_exists(dialogcontroller_obj)) {
 	var fade = instance_create_depth(0, 0, -9999, fadetoblack_obj);
 	fade.on_complete = function() {
 										room_goto(main_room);
@@ -93,30 +96,53 @@ if(dialog3_spawned && room != main_room && !instance_exists(dialogcontroller_obj
 	audio_stop_sound(Alarm);
 }
 
+// intro dialog box for the introduction
+if(!intro_dialog && room == cutscene_room) {
+	var intro_msg = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+	intro_msg.full_line = "Day 47 of the Scylla X-37 survey expedition. Ship J-957 currently orbiting the nearby CX89 planet, awaiting further orders to continue survey."
+	intro_msg.calling_char = "Professor Jeni";
+	intro_dialog = true;
+}
+if(intro_dialog && !intro_dialog_2 && room == cutscene_room) {
+	var intro_msg = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+	intro_msg.full_line = "You should take a look around the cabin - not like there's much else to do. You remember Professor Luup's lesson back at the home base. INTERACT with objects using E, MOVE using WASD, and hit SPACE to speed up dialog. "
+	intro_dialog_2 = true;
+}
+
 // after the first loop
 if(global.loop_counter == 2 && global.looptime_remaining == 60 && !first_loop_dialog) {
 	var dialog_first_loop = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-	dialog_first_loop.full_line = "Just as I thought... the gravity forces time to loop... Fascinating!";
+	dialog_first_loop.full_line = "Just as I thought... the gravity forces time to loop... Fascinating! Everything has returned to where it was a minute ago!";
 	dialog_first_loop.calling_char = "Professor Jeni";
 	first_loop_dialog = true;
 }	
-	
 
-if(global.loop_counter > 13) { // game over condition
+if(global.loop_counter == 3 && global.looptime_remaining == 60 && !first_loop_dialog) {
+	var dialog_first_loop = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+	dialog_first_loop.full_line = "It seems I can't keep my progress between loops.";
+	dialog_first_loop.calling_char = "Professor Jeni";
+	second_loop_dialog = true;
+}
+
+// stupid stupid code design where i handle changing gamestate in here instead bc the foundation is chuzzed
+if(global.transciever_found && global.curr_gamestate == 2) {
+	global.curr_gamestate = 3;
+}
+
+	
+if(global.loop_counter > 13 && !global.gameover) { // game over condition
 	global.gameover = true;
+	room_goto(gameover_room);
 	show_debug_message("game over");
 }
 
 //check if win cond met OR if gameover
-if(global.curr_gamestate >= 4) {
+if(global.curr_gamestate >= 4 && !global.gamewon) {
 	//end the game here, play win cutscene
 	global.gamewon = true;
+	audio_play_sound(PositiveNotification, 1, false);
+	room_goto(gamewon_room);
 	show_debug_message("game won!");
 } 
 
 
-if (global.gameover) {
-	// play lose cutscene
-	show_debug_message("go to menu here");
-	room_goto(gameover_room);
-}

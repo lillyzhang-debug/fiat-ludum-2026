@@ -9,7 +9,7 @@ passfound = false;
 routed = false;
 
 // player stats
-player_spd = 1.5;
+player_spd = 2;
 
 player_moving = false;
 

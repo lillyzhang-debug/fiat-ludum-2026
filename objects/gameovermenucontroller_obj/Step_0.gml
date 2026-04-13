@@ -5,5 +5,5 @@ if(keyboard_check_pressed(vk_enter)){
 
 if(keyboard_check_pressed(vk_escape)) {
 	audio_stop_sound(gameover);
-	room_goto(main_menu); // escape to main menu
+	game_restart();
 }

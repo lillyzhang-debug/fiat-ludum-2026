@@ -1,5 +1,7 @@
 // draw title sprite above, centered
-draw_sprite(title_spr, 0, 320, 80);
+draw_set_halign(fa_center);
+//draw_set_valign(fa_middle);
+draw_text(320,200, "Press Enter to Start");
 
-draw_sprite(menubutton_spr, 0, 320, 170);
-
+//set it back
+draw_set_halign(fa_left);

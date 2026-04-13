@@ -31,11 +31,11 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"door_spr",
     "path":"sprites/door_spr/door_spr.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

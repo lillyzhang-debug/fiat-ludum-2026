@@ -55,18 +55,18 @@ function interaction_scr(){
 			// for interactables with secrets, set the line_index to 1 if the secret has been found
 			// note that coordfound may be the wrong thing to check for (in general win conds, depends on
 			// how these are set
-			if(target_id == "console2" && global.looptime_remaining > 50) {
+			if(target_id == "console2" && global.looptime_remaining > 45) {
 				coordfound = true;
 				if (global.curr_gamestate == 1) {
-					global.curr_gamestate++;
+					global.curr_gamestate = 2;
 					//maybe have dialogue abt like ...where do i put these .... something to direct the player
 				}
 				line_index = 1; //
 			
-			} else if (target_id == "window" && global.curr_gamestate == 2 && global.transciever_found) {
+			} /*else if (target_id == "window" && global.curr_gamestate == 2 && global.transciever_found) {
 					global.curr_gamestate++; // move to next state after earth transciever found
-			} else if (target_id == "console3" && global.curr_gamestate == 3 && global.looptime_remaining >= 50) {
-				global.curr_gamestate++; // player has won atp
+			}*/ else if (target_id == "console3" && global.curr_gamestate == 3 && global.looptime_remaining >= 30) {
+				global.curr_gamestate = 4; // player has won atp
 				line_index = 1;
 			} else if (target_id == "wabbit" && !tutorial_done) {
 				line_index = 0;	

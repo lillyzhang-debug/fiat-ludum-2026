@@ -7,7 +7,9 @@ global.looptime_remaining = looptime;
 global.loop_counter = 1;
 
 // intro length, give player this amount of time to explore the cabin before playing the comms
-intro_length = 10;
+intro_length = 90;
+intro_dialog = false;
+intro_dialog_2 = false;
 audio_started = false;
 message_played = false;
 dialog_spawned = false;
@@ -15,6 +17,7 @@ dialog2_spawned = false;
 dialog3_spawned = false;
 
 first_loop_dialog =  false;
+second_loop_dialog = false;
 // hold frame of comms dialog box
 dialog_frame = 0;
 
@@ -32,8 +35,13 @@ if(room == main_room) {
 
 audio_stop_sound(tutorial_tune); // turn off sound from tutorial
 
-// --- TURN ON MAIN GAME SONG ---
+// --- TURN ON SPACESHIP/MAIN GAME SONG ---
+if(!audio_is_playing(Introductory_Theme) && room == cutscene_room) {
+	audio_stop_all();
+	audio_play_sound(Introductory_Theme, 1, true);
+}
 if(!audio_is_playing(atgravitysedge) && room == main_room) {
+	audio_stop_all();
 	audio_play_sound(atgravitysedge, 1, true);
 }
 global.fx_horizon = layer_get_fx("fx_horizon");
