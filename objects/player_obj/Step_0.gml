@@ -1,5 +1,14 @@
-// call movement script
+
+//change run speed based off room & depth for accurate drawing
+if (room == main_room) {
+	player_spd = 2;
+} else {
+	player_spd = 1.5;
+}
+
 depth = -y;
+
+// call movement script
 if(!instance_exists(dialogcontroller_obj) && !audio_is_playing(Distorted_Voice_Coms)){
 	player_moving = movement_scr(player_spd);
 	

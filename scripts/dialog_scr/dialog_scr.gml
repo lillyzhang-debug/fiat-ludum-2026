@@ -8,7 +8,7 @@ global.item_dialog = {
 	
 	// 0 for notfound, 1 for found 
 	console2: {
-		state0: ["The starmap of the surrounding stars twinkles green, the computer quietly humming beneath it."],
+		state0: ["The starmap of the surrounding stars twinkles green, the computer quietly humming beneath it. This console directly links to your TABLET, which you use in your experiments and for communications."],
 		state1: [{
 						text: "Examine the starmap?",
 						options: ["Check", "Leave"],
@@ -21,7 +21,7 @@ global.item_dialog = {
 										fade.on_complete = function() {
 											if(global.looptime_remaining >= 45){
 												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-												dialogcontroller.full_line = "The ship's coordinates are displayed in bright lettering at the bottom of the screen. You pull them from the console onto your tablet. Now to get the transciever...";
+												dialogcontroller.full_line = "The ship's coordinates are displayed in bright lettering at the bottom of the screen. You pull them from the console onto your TABLET. Now to get the TRANSCIEVER...";
 												dialogcontroller.options = [];
 												dialogcontroller.option_actions = [];
 												if(!audio_is_playing(PositiveNotification)) {
@@ -53,10 +53,10 @@ global.item_dialog = {
 	},
 	
 	console3: {
-		state0: ["The central console. Communications to Earth and other planets are sent through this screen using TRANSCIEVERS."],
+		state0: ["The central console. Communications to Earth and other planets are sent through this screen using TRANSCIEVERS. There are several ports for each transciever on the ship."],
 		state1: ["The local network seems to be down. The ship's coordinates from the starmap can't be accessed through this console."],
-		state2: ["You need the Earth transciever to send your location back. Damn! Where did it go?!"],
-		state3: ["Thirty seconds for transmission... I don't know if it'll make it.", "Come on, come on, go go go!"]
+		state2: ["You need the Earth TRANSCIEVER to send your location back. Damn! Where did it go?!"],
+		state3: ["Thirty seconds for transmission... I don't know if it'll make it.", "You squeeze your eyes shut, heart thumping in your chest as the TRANSCIEVER beeps steadily, transferring your location back home."]
 	},
 	
 	photo: {
@@ -237,6 +237,22 @@ global.item_dialog = {
 						}], // bc window covers the couch, you find tranciever key in the couch
 		state3: ["Is this really the time for stargazing?"]
 	},
+	
+	toolbox: {
+		state0: ["Your toolbox sits on the ground, it's contents spilled all over. You were fixing the loose vent before you got distracted."],
+		default_state: ["As you dash around the ship, you stub your toe on the metal box. Ouch!"]
+	},
+	
+	oxygen: {
+		state0: ["A few spare oxygen tanks sit on the steps. You should probably move them. At some point."],
+		default_state: ["Oxygen will not be helpful within the black hole."]
+	},
+	
+	labbench: {
+		state0: ["A small lab bench used for short experiements that can be done in this small ship."],
+		default_state: ["It's not the time to run any titrations."]
+	},
+	
 	
 	wabbit: {
 		default_state: [{

@@ -7,7 +7,7 @@ global.looptime_remaining = looptime;
 global.loop_counter = 1;
 
 // intro length, give player this amount of time to explore the cabin before playing the comms
-intro_length = 90;
+intro_length = 60;
 intro_dialog = false;
 intro_dialog_2 = false;
 audio_started = false;

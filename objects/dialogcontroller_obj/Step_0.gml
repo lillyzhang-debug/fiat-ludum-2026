@@ -10,7 +10,7 @@ if(keyboard_check_pressed(vk_space)) { // skip to end of dialog, or if at end, c
 	}
 }
 	
-if(char_index < string_length(full_line)) {
+if(char_index <= string_length(full_line)) {
 	// increase char counter
 	char_index += text_speed;
 		
