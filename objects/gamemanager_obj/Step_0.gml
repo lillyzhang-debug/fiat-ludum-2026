@@ -26,13 +26,34 @@ if (global.countdown_on && room == main_room) {
 	var curr_horizon = global.fx_horizon;
 	layer_set_fx("fx_horizon", curr_horizon);
 	if (global.looptime_remaining < 30 && global.looptime_remaining > 0) {	
+		// To "show" it
+		fx_set_parameter(curr_horizon, "g_Intensity", 1);
 		//layer_enable_fx("fx_horizon", true);
 		layer_set_visible("fx_horizon", true);
 		layer_set_visible("screen_shake", true);
 		fx_set_parameter(curr_horizon, "param_num_particles", 60 - 2*floor(global.looptime_remaining));
-	} else if(global.looptime_remaining <= 0) {
-		fx_set_parameter(curr_horizon, "param_num_particles",0);
-		 layer_set_visible("fx_horizon", false);
+	} else {
+		// To "hide" it (but keep it running)
+		fx_set_parameter(curr_horizon, "g_Intensity", 0);
+
+
+    
+	    // This catches everything else! (When time <= 0 AND when time >= 30)
+	    layer_set_visible("fx_horizon", false);
+	
+		layer_set_visible("screen_shake", false);
+    
+	    // Clamp particles to 0 so no "backlog" builds up while it's invisible
+	    fx_set_parameter(curr_horizon, "param_num_particles", 0);
+    
+	} 
+	
+	if(global.looptime_remaining <= 0) {
+		layer_set_visible("fx_horizon", false);
+		if (!layer_get_visible("fx_horizon")) {
+			fx_set_parameter(curr_horizon, "param_num_particles",0);
+		}
+			
 		global.loop_counter += 1 ; 
 		global.looptime_remaining = looptime;
 		
@@ -50,9 +71,10 @@ if (global.countdown_on && room == main_room) {
 		
 		// destroy all dialog boxes if we're resetting
 		instance_destroy(dialogcontroller_obj);
-		
 	}
+		
 }
+
 // here is the intro instrucitons
 else {
 	if(dialog_frame < 3) {
@@ -67,8 +89,8 @@ else {
 		layer_set_visible("screen_shake", true);
 		if(!audio_started) {
 			if (instance_exists(dialogcontroller_obj)) {
-			instance_destroy(dialogcontroller_obj);
-		}
+				instance_destroy(dialogcontroller_obj);
+			}
 			if(!audio_is_playing(Distorted_Voice_Coms)) {
 				audio_play_sound(Distorted_Voice_Coms, 1, false);
 				audio_play_sound(Alarm, 3, true);

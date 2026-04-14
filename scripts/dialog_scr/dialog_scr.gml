@@ -8,7 +8,7 @@ global.item_dialog = {
 	
 	// 0 for notfound, 1 for found 
 	console2: {
-		state0: ["The starmap of the surrounding stars twinkles green, the computer quietly humming beneath it. This console directly links to your TABLET, which you use in your experiments and for communications."],
+		state0: ["The ship's XNAV shows a starmap of the surrounding stars twinking green, as the computer quietly hums beneath it. This console directly links to your TABLET, which you use to connect to each of the individual consoles."],
 		state1: [{
 						text: "Examine the starmap?",
 						options: ["Check", "Leave"],
@@ -29,7 +29,7 @@ global.item_dialog = {
 												}
 											} else {
 												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-												dialogcontroller.full_line = "The screen is flashing red, parts of it flickering on and off. Even though it was working just moments ago, it seems the black hole has begun to destroy parts of the ship, starting with the INS.";
+												dialogcontroller.full_line = "The screen is flashing red, parts of it flickering on and off. Even though it was working just moments ago, it seems the black hole has begun to destroy parts of the ship, starting with the XNAV.";
 												dialogcontroller.options = [];
 												dialogcontroller.option_actions = [];
 												if(!audio_is_playing(NegativeNotification)) {
@@ -71,7 +71,37 @@ global.item_dialog = {
 	cabinet1: {
 		state0: ["The cabinet is full of rations and medkits. Astronaut ice cream... Yummy!"],
 		state1: ["It's full of rations and medkits. Not very helpful. Unless you want to go out eating freeze dried ice cream."],
-		state2: ["Not the best final meal."],
+		state2: [{
+						text: "Search for the transciever here?",
+						options: ["Hunt in the cabinet", "Leave"],
+						actions: [
+									function() {								
+										// fade the screen to black and decrement the timer by 15
+						
+										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj); 
+										fade.pause = 60;
+										// read out dialog line after we fade
+										fade.on_complete = function() {
+											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+											dialogcontroller.full_line = "A medkit falls from the shelves and hits you on the head. As if your day could get any worse...";
+											dialogcontroller.options = [];
+											dialogcontroller.option_actions = [];
+											if(!audio_is_playing(NegativeNotification)) {
+											audio_play_sound(NegativeNotification, 1, false);
+										}
+										}
+										
+									},
+									
+									function() { // indicate you leave
+										var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
+										dialogcontroller.full_line = "Let's not.";
+										dialogcontroller.options = [];
+										dialogcontroller.option_actions = [];
+									}
+										
+								]
+						}],
 		state3: ["Why am I even looking in here?"]
 	},
 	
@@ -95,7 +125,7 @@ global.item_dialog = {
 											dialogcontroller.option_actions = [];
 											if(!audio_is_playing(NegativeNotification)) {
 											audio_play_sound(NegativeNotification, 1, false);
-										}
+											}
 										}
 										
 									},
@@ -211,7 +241,7 @@ global.item_dialog = {
 										// fade the screen to black and decrement the timer by 20
 										// if there are not 15 seconds left, set the remaining time to 5
 										var fade = instance_create_depth(0, 0, -1000, fadetoblack_obj);
-										fade.pause = 0;
+										fade.pause = 60;
 										// read out dialog line after we fade
 										fade.on_complete = function() {
 											var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
