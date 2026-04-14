@@ -1,3 +1,3 @@
 item_id = "vent";
 
-depth = 100;
+depth = -100;

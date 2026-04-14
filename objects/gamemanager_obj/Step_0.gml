@@ -1,3 +1,6 @@
+// call the global gamestatus script
+gamestatus_scr();
+
 if (global.countdown_on && room == main_room) {	
 	// count down time here
 	global.looptime_remaining -= (delta_time / 1000000); //delta_time in microseconds
@@ -165,7 +168,15 @@ if(global.curr_gamestate >= 4 && !global.gamewon) {
 
 if (global.gamewon) {
 	layer_set_visible("screen_shake", true);
-	if (keyboard_check_pressed(vk_space)) {
+	if(!audio_is_playing(Spacecraft) && !loading_noise_played) {
+		audio_play_sound(Spacecraft, 1, false);
+		loading_noise_played = true;
+	}
+	if(!audio_is_playing(Spacecraft) && !audio_is_playing(Success) && loading_noise_played && !success_noise_played) {
+		audio_play_sound(Success, 1, false);
+		success_noise_played = true;
+	}
+	if (!instance_exists(dialogcontroller_obj) && loading_noise_played && success_noise_played) {
 		//var fade = instance_create_depth(0, 0, -9999, fadetoblack_obj);
 		//fade.on_complete = function() {
 		//								room_goto(gamewon_room);

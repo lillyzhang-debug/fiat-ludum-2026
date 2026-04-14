@@ -29,7 +29,7 @@ global.item_dialog = {
 												}
 											} else {
 												var dialogcontroller = instance_create_depth(0, 0, -9999, dialogcontroller_obj);
-												dialogcontroller.full_line = "The screen is flashing red, parts of it flickering on and off. It seems the ship's proximity to the black hole has begun to destroy parts of the ship, starting with the computers.";
+												dialogcontroller.full_line = "The screen is flashing red, parts of it flickering on and off. Even though it was working just moments ago, it seems the black hole has begun to destroy parts of the ship, starting with the INS.";
 												dialogcontroller.options = [];
 												dialogcontroller.option_actions = [];
 												if(!audio_is_playing(NegativeNotification)) {
@@ -245,7 +245,7 @@ global.item_dialog = {
 	
 	oxygen: {
 		state0: ["A few spare oxygen tanks sit on the steps. You should probably move them. At some point."],
-		default_state: ["The canisters rattle against eachother, and you regret not moving these out of the way earlier. "]
+		default_state: ["The canisters rattle against each other, and you regret not moving these out of the way earlier. "]
 	},
 	
 	labbench: {
@@ -256,7 +256,7 @@ global.item_dialog = {
 	
 	wabbit: {
 		default_state: [{
-							text: "Great work professor! You're an expert in INTERACTING now!. INTERACT with the EXIT when you're ready. You can navigate through choices using the UP and DOWN buttons. Press ENTER to select your choice. Best of luck on the survey!",
+							text: "Great work professor! You're an expert in INTERACTING now! INTERACT with the EXIT when you're ready. You can navigate through choices using the UP and DOWN buttons. Press ENTER to select your choice. Best of luck on the survey!",
 							options: [],
 							actions: []
 						},
