@@ -1,5 +1,5 @@
 if (global.countdown_on && global.looptime_remaining <= 45) {
-	obj_desk.sprite_index = desk_error;
+	obj_desk.sprite_index = red_desk_light2;
 } else {
 	obj_desk.sprite_index = desk_light2;
 

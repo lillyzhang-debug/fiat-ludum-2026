@@ -65,6 +65,7 @@
     {"id":{"name":"interactable_obj","path":"objects/interactable_obj/interactable_obj.yy",},},
     {"id":{"name":"labbench_obj","path":"objects/labbench_obj/labbench_obj.yy",},},
     {"id":{"name":"menucontroller_obj","path":"objects/menucontroller_obj/menucontroller_obj.yy",},},
+    {"id":{"name":"obj_desk","path":"objects/obj_desk/obj_desk.yy",},},
     {"id":{"name":"obj_greennav","path":"objects/obj_greennav/obj_greennav.yy",},},
     {"id":{"name":"obj_password","path":"objects/obj_password/obj_password.yy",},},
     {"id":{"name":"obj_rednav","path":"objects/obj_rednav/obj_rednav.yy",},},
