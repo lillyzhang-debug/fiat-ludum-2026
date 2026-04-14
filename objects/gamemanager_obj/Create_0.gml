@@ -19,6 +19,9 @@ console_down = false;
 
 first_loop_dialog =  false;
 second_loop_dialog = false;
+
+loading_noise_played = false;
+success_noise_played = false;
 // hold frame of comms dialog box
 dialog_frame = 0;
 // activate/deactivate game countdown and current gamestate

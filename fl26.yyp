@@ -106,6 +106,8 @@
     {"id":{"name":"NegativeNotification","path":"sounds/NegativeNotification/NegativeNotification.yy",},},
     {"id":{"name":"PositiveNotification","path":"sounds/PositiveNotification/PositiveNotification.yy",},},
     {"id":{"name":"Slam","path":"sounds/Slam/Slam.yy",},},
+    {"id":{"name":"Spacecraft","path":"sounds/Spacecraft/Spacecraft.yy",},},
+    {"id":{"name":"Success","path":"sounds/Success/Success.yy",},},
     {"id":{"name":"titletheme","path":"sounds/titletheme/titletheme.yy",},},
     {"id":{"name":"tutorial_tune","path":"sounds/tutorial_tune/tutorial_tune.yy",},},
     {"id":{"name":"Background","path":"sprites/Background/Background.yy",},},
